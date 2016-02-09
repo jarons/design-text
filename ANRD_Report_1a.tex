@@ -1,10 +1,19 @@
-\documentclass[]{article}
+\documentclass[]{report}
 \usepackage[english]{babel}
+\usepackage{longtable}
 \usepackage{booktabs}
 \usepackage{multirow}
+\usepackage{multicol}
 \title{Advanced Nuclear Reactor Design Report}
 \author{Matthew Eklund, Christopher Morrison, Jaron Senecal}
 \date{Spring 2016}
+
+% Smaller margins, fix these later:
+\addtolength{\oddsidemargin}{-0.75in}
+\addtolength{\evensidemargin}{-1.25in}
+\addtolength{\textwidth}{1.75in}%
+%\addtolength{\topmargin}{-1in}
+\addtolength{\textheight}{1.5in}
 
 \begin{document}
 \maketitle
@@ -91,11 +100,101 @@ The problem of increasing nuclear waste and increasing passive safety systems of
 Following the brainstorming session and group discussions, the mission for the reactor was determined.
 The mission for the new reactor design is meant to provide an economic solution to the production of long-lived radioactive waste produced by standard light water reactors (LWRs).  The official mission of the project is thus:
 \begin{itemize} 
-  \item To design a nuclear power reactor which is optimized to burn long-lived actinides while implementing additional passive safety features over standard LWR designs.
+  \item To design a nuclear power reactor which is optimized to burn long-lived actinides while implementing additional passive safety features over standard reactor designs.
 \end{itemize}
 
 The process by which this reactor is designed is documented in this report.
 
-\section{Desirables}
+\section{Design Attributes}
+With the mission for designing the new reactor having been decided, the more specific details of the desired reactor functions and attributes must be determined.
+For a reactor that is optimized for burning long-lived actinides, certain attributes are essential.
+The list of most important attributes for this reactor is as follows:
+
+\begin{itemize} 
+  \item The new reactor design must maintain and exceed the safety levels achieved by modern reactor designs.
+  \item The reactor must provide a means for burning long-lived actinides.  This will require higher-energy neutrons to increase fission rate of actinides.
+  \item The reactor design should take advantage of natural processes/phenomena to increase safety wherever possible.  Relying on natural processes will decrease the need for engineered systems for increased safety and reliability.  The simplified design may also reduce costs in construction and maintenance.
+  \item As far as possible, decisions should favor an economical design by reducing the cost in construction and operation.
+\end{itemize}
+
+Along with these primary and most essential attributes, there are several secondary attributes that are less crucial to achieve in the final design.  The list of secondary attributes is as follows:
+\begin{itemize}
+  \item The burner reactor design may be considered a "stepping stone" toward a breeder reactor design.  Modular or replaceable features which may facilitate a breeding environment within the core may be considered.
+  \item If possible, technologies for improving proliferation resistance in the reactor design should be incorporated.
+  \item If possible, the reactor should be designed using technologies which are available either currently or within a reasonable amount of time so as to reduce the time necessary for construction and implementation of the reactor (including research and development phases).
+\end{itemize}
+
+\section{Core Component Desirables and Potential Materials}
+
+At this point, no materials, geometries, etc. have been disqualified from potential burner reactor designs for this project;  the authors wish to keep an open-minded mentality to this design process.
+In order to determine which materials would be optimal for a burner reactor, a brainstorming session resulted in a list of common and potential materials for arguably the three most important components of a nuclear reactor core: the fuel, the fuel cladding, and the coolant.  The fuel is what contains the fissile or fissionable material to produce fission nuclear reactions to produce heat (which is the whole purpose of designing and building a nuclear reactor core).  The cladding exists to contain the fuel and is the first line of defense for the release of fission products from the core.  Finally, the coolant is what extracts the heat from the fuel to eventually be used in a heat generation cycle (e.g., Rankine or Brayton) to produce electricity.
+Found below is a table of the desirable attributes for the fuel, cladding, and coolant specifically for a burner reactor as determined by the authors.  They are not listed in order of priority.
+
+
+
+\begin{center}
+\begin{tabular}[c]{| c | c | c | c |}
+\hline
+\multicolumn{4}{|c|}{Desirable Component Attributes} \\
+\hline
+ & Fuel & Cladding & Coolant \\
+\hline
+\hline
+\multirow{2}{*}{Thermophysical} & High Density & \multicolumn{2}{|c|}{High Thermal Conductivity} \\
+\cline{2-4}
+ & \multicolumn{2}{|c|}{High Melting Point} & Low Melting Point \\
+\cline{2-4}
+\multirow{2}{*}{Properties} & & & High Specific Heat \\
+\cline{2-4}
+ & & & High Boiling Point (if liquid) \\
+\hline
+\multirow{3}{*}{Neutronics/Reactivity} & \multicolumn{3}{|c|}{Low Neutron Capture Cross Section} \\
+\cline{2-4}
+ & \multicolumn{3}{|c|}{Low Neutron Moderation} \\
+\cline{2-4}
+ & High Criticality & & \\
+\hline
+\multirow{3}{*}{Mechanical/} & \multicolumn{3}{|c|}{Chemical Compatibility at Interfaces}  \\
+\cline{2-4}
+ & \multicolumn{3}{|c|}{Manufacturable and Low Cost} \\
+\cline{2-4}
+\multirow{2}{*}{Chemical Properties} & \multicolumn{2}{|c|}{Brittle/Ductile} & Optical Transparency \\
+\cline{2-4}
+ & Low Swelling/Growth & High Strength & Easy Pumping \\
+\cline{2-4}
+ &  & Retains Fission Products &  \\
+\hline
+\end{tabular}
+\end{center}
+
+For these three major components, the list of desirable attributes can be used to determine a set of compatible materials.  After a brainstorming session, the table below includes the major choices of materials that would be suitable for each component.
+
+\begin{center}
+\begin{tabular}[c]{| c | c | c | c |}
+\hline
+\multicolumn{3}{|c|}{Potential Component Materials} \\
+\hline
+Fuel & Cladding & Coolant \\
+\hline
+Uranium dioxide (UO2) & Zirconium alloys & Sodium (Na) \\
+\hline
+Uranium carbide (UC) & Steels & Sodium potassium (NaK) \\
+\hline
+Uranium nitride (UN) & Iron-chromium-aluminum (FeCrAl) alloy & Lead (Pb) \\
+\hline
+Uranium zirconium (UZr) alloys & Nickel (Ni) alloys & Mercury (Hg) \\
+\hline
+Mixed Oxides (MOX)  & Chromium (Cr) alloys & Particle fluid\\
+\hline
+Plutonium (Pu)  & Silicon carbide (SiC) & Salt mixtures \\
+\hline
+Mixed Nitrides  & Ceramics & Chlorides \\
+\hline
+Salt Fuels & Hastelloys & Noble Gases (e.g., Argon, Helium) \\
+\hline
+Liquid Fuels & & Nitrogen (N2) \\
+\hline
+\end{tabular}
+\end{center}
 
 \end{document}
