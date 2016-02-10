@@ -1,6 +1,9 @@
 \documentclass[]{book}
 %\usepackage{standalone} %you could combine documents this way 
-\usepackage{booktabs} 
+\usepackage{booktabs} % tables
+\usepackage{graphicx} %allows .png\
+%\usepackage{natbib} % I don't think we need this, just chapterbib
+\usepackage{chapterbib}
 
   % Smaller margins, fix these later:
 \addtolength{\oddsidemargin}{-0.75in}
@@ -31,12 +34,12 @@ Teaching college students how to solve equations is easy to do. But teaching stu
 \tableofcontents
 \endgroup
 
-\input{content1.tex}
+\include{content1}
 
-\input{content2.tex}
+\include{content2}
 
 
 
-\input{Materials.tex}
+\include{Materials}
 
 \end{document}
