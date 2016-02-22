@@ -68,8 +68,19 @@ As developing countries seek carbon-clean energy resources with a sufficient pow
 alternative to pollution-producing plants which burn traditional fossil fuels.
 
 With the function and geographical location for this reactor decided, the mission which drives the design of a particular type of reactor was explored.  Each nuclear reactor must take into account (to varying degrees) the contemporary atmosphere in which it will be built; this includes factors such as current and potential future technologies, the economic and political environment, economic feasibility, etc.
-In beginning this project, the authors brainstormed on important problems related to the world's energy crisis and nuclear power of today.  The table below includes the major problems chosen by the team which should be addressed when designing a new power-generation facility.
+In beginning this project, the authors brainstormed on important problems related to the world's energy crisis and nuclear power of today.  %The table below includes the major problems chosen by the team which should be addressed when designing a new power-generation facility.
+The major problems selected by the team to be addressed when designing a new power-generation facility are listed in order of priority
+\begin{itemize}
+  \item[1.] Buildup of nuclear waste (long-lived actinides and fission products)
+  \item[2.] Lack of passive safety systems in reactors
+  \item[3.] High cost of constructing and operating a reactor
+  \item[4.] Lengthy construction times for nuclear facilities, including lead time for research and development
+  \item[5.] Dwindling fissile material available
+  \item[6.] Proliferation concerns
+\end{itemize}
+Of course there are other non-negotiable priorities that will be considered as constraints, such as maintaining an acceptable level of safety.
 
+\iffalse
 \begin{center}
 \begin{tabular}[c]{| p{5cm} | c |}
 \hline
@@ -89,6 +100,7 @@ Proliferation concerns & \multirow{1}{*}{6} \\
 \hline
 \end{tabular}
 \end{center}
+\fi
 
 The justification for choosing the ranking system is based on the current political and economical status of nuclear power in the world.  
 The costs of building and operating a reactor can only be reduced by a finite quantity as compared to the total cost.  
@@ -129,20 +141,24 @@ Along with these primary and most essential attributes, there are several second
 \section{Core Component Desirables and Potential Materials}
 
 At this point, no materials, geometries, etc. have been disqualified from potential burner reactor designs for this project;  the authors wish to keep an open-minded mentality to this design process.
-In order to determine which materials would be optimal for a burner reactor, a brainstorming session resulted in a list of common and potential materials for arguably the three most important components of a nuclear reactor core: the fuel, the fuel cladding, and the coolant.  The fuel is what contains the fissile or fissionable material to produce fission nuclear reactions to produce heat (which is the whole purpose of designing and building a nuclear reactor core).  The cladding exists to contain the fuel and is the first line of defense for the release of fission products from the core.  Finally, the coolant is what extracts the heat from the fuel to eventually be used in a heat generation cycle (e.g., Rankine or Brayton) to produce electricity.
+In order to determine which materials would be optimal for a burner reactor, a brainstorming session resulted in a list of common and potential materials for arguably the three most important components of a nuclear reactor core: the fuel, the fuel cladding, and the coolant (no moderator is required because this will be a fast reactor). 
+ The fuel is what contains the fissile or fissionable material to produce fission nuclear reactions to produce heat. It needs to withstand an extreme environment while conducting heat to the working fluid. %(which is the whole purpose of designing and building a nuclear reactor core).  
+ The cladding exists to contain the fuel and is the first line of defense for the release of fission products from the core.  Finally, the coolant is what extracts the heat from the fuel to eventually be used in a heat generation cycle (e.g., Rankine or Brayton) to produce electricity.
 Found below is a table of the desirable attributes for the fuel, cladding, and coolant specifically for a burner reactor as determined by the authors.  They are not listed in order of priority.
 
 
 
 \begin{center}
-\begin{tabular}[c]{| c | p{1.5cm} | p{1.5cm} | p{2cm} |}
+\begin{tabular}[c]{| c | p{2cm} | p{2cm} | p{2.0cm} |}
 \hline
 \multicolumn{4}{|c|}{Desirable Component Attributes} \\
 \hline
  & Fuel & Cladding & Coolant \\
 \hline
 \hline
-\multirow{2}{*}{Thermophysical} & High Density & \multicolumn{2}{|c|}{High Thermal Conductivity} \\
+\multirow{2}{*}{Thermophysical} & High Density & &\\
+\cline{2-4}
+ & \multicolumn{3}{|c|}{High Thermal Conductivity} \\
 \cline{2-4}
  & \multicolumn{2}{|c|}{High Melting Point} & Low Melting Point \\
 \cline{2-4}
@@ -154,13 +170,13 @@ Found below is a table of the desirable attributes for the fuel, cladding, and c
 \cline{2-4}
  & \multicolumn{3}{|c|}{Low Neutron Moderation} \\
 \cline{2-4}
- & High Criticality & & \\
+ & High Reactivity & & \\
 \hline
-\multirow{3}{*}{Mechanical/} & \multicolumn{3}{|c|}{Chemical Compatibility at Interfaces}  \\
+\multirow{3}{*}{Mechanical/} & \multicolumn{3}{|c|}{Chemical Compatibility}  \\ % at Interfaces
 \cline{2-4}
  & \multicolumn{3}{|c|}{Manufacturable and Low Cost} \\
 \cline{2-4}
-\multirow{2}{*}{Chemical Properties} & \multicolumn{2}{|c|}{Brittle/Ductile} & Optical Transparency \\
+\multirow{2}{*}{Chemical Properties} & \multicolumn{2}{|c|}{Ductile} & Optical Transparency \\ %Brittle/
 \cline{2-4}
  & Low Swelling / Growth & High Strength & Easy Pumping \\
 \cline{2-4}
@@ -172,7 +188,7 @@ Found below is a table of the desirable attributes for the fuel, cladding, and c
 For these three major components, the list of desirable attributes can be used to determine a set of compatible materials.  After a brainstorming session, the table below includes the major choices of materials that would be suitable for each component.
 
 \begin{center}
-\begin{tabular}[c]{| p{1.5cm} | p{2cm} | p{2cm} |}
+\begin{tabular}[c]{| p{2.0cm} | p{2.5cm} | p{2.5cm} |}
 \hline
 \multicolumn{3}{|c|}{Potential Component Materials} \\
 \hline
@@ -184,22 +200,23 @@ Uranium carbide (UC) & Steels & Sodium potassium (NaK) \\
 \hline
 Uranium nitride (UN) & Iron-chromium-aluminum (FeCrAl) alloy & Lead (Pb) \\
 \hline
-Uranium zirconium (UZr) alloys & Nickel (Ni) alloys & Mercury (Hg) \\
+Uranium-zirconium (UZr) alloys & Nickel (Ni) alloys & Lead-Bismuth Eutectic\\
 \hline
-Mixed Oxides (MOX)  & Chromium (Cr) alloys & Particle fluid\\
+Uranium silicide (U$_3$Si$_2$)  & Chromium (Cr) alloys & Nitrogen (N$_2$)\\ %Particle fluid
 \hline
-Plutonium (Pu)  & Silicon carbide (SiC) & Salt mixtures \\
+Plutonium-Uranium compounds  & Silicon carbide (SiC) & Fluoride Salts \\
 \hline
-Mixed Nitrides  & Ceramics & Chlorides \\
+Salt Fuels & Ceramic Composites & Chloride Salts \\
 \hline
-Salt Fuels & Hastelloys & Noble Gases (e.g., Argon, Helium) \\
+Liquid Fuels & Hastelloys & Noble Gases (e.g., Argon, Helium) \\
 \hline
-Liquid Fuels & & Nitrogen (N$_2$) \\
+ & & Mercury (Hg)  \\
 \hline
 \end{tabular}
 \end{center}
+% I'm taking out MOX and mixed nitrides, trying to make it more generic
 
-All of these and more materials could potentially serve as fuel, cladding, coolant, and other components (structural, piping, etc.) for the reactor core.  However, the goal is to achieve an optimal design to take advantage of all available materials for accomplishing the mission of the reactor's construction.  With seemingly endless options, a method for narrowing down materials with less desirable properties for each of the reactor core components must be eliminated over more suitable materials.  
+All of these and more materials could potentially serve as fuel, cladding, coolant, and other components (structural, piping, etc.) for the reactor core.  However, the goal is to achieve an optimal design to take advantage of all available materials for accomplishing the mission of the reactor's construction.  With seemingly endless options, a method for narrowing down the list of potential materials is needed. For each of the reactor core components materials with less desirable properties must be eliminated.  
 
 One possible method of narrowing material selection choices is to create a grading matrix.  Criteria which are crucial for particular reactor component functions will have a rating given to each material; a "1" indicates the material is nearly perfectly suitable for such a function, and "5" indicates the material will not function well for this purpose.
 
@@ -207,36 +224,39 @@ A notable limitation of this grading rubric is that certain material properties 
 
 The grading matrix is broken into three parts for the fuel, cladding, and coolant separately.  The authors brainstormed and included a grading based on technical data which is included (where available) and otherwise determined through recommendations of previous reactor designers and analysts, operating reactor experience, etc.
 
-
+% We need to add the columns: swelling
 \begin{center}
-\begin{tabular}[c]{| p{1.8cm} | p{1.2cm} | p{2.05cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} | p{2cm} |}
+\begin{tabular}[c]{| p{1.6cm} | p{1.2cm} | p{2.05cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} | p{2cm} |}
 \hline
 \multicolumn{8}{|c|}{Potential Fuel Materials Grading Matrix} \\
 \hline
- & Physical Density \{g/cm$^3$\} & Fission Material Density \{g/cm$^3$\} & Thermal Conductivity  \{W/(m-K)\} & Melting Point \{K\} & Criticality & Chemical Compatibility & Brittle / Ductile & Linear Expansion Coefficient \{10$^6$(1/K)\} \\
+ & Physical Density \{g/cm$^3$\} & Fission Material Density \{g/cm$^3$\} & Thermal Conductivity  \{W/(m-K)\} & Melting Point \{K\} & Reactivity & Chemical Compatibility & Ductility & Linear Expansion Coefficient \{10$^6$(1/K)\} \\
 \hline
-Uranium dioxide (UO$_2$) & \{10.963\} & \{9.664\} & \{2.6\} (1523 K, theor. density) & 1 \{3120\} & & 1 & & \{9.8\} (300 K)  \\
+Uranium dioxide (UO$_2$) & \{10.963\} & \{9.664\} & 5 \{2.6\} (1523 K, theor. density) & 1 \{3120\} & & 1 & & \{9.8\} (300 K)  \\
 \hline
 Uranium carbide (UC) & \{13.630\} & \{12.970\} & \{23.0\} (700 K) & \{2793\} & & & & \{10.5\} (300 K)\\
 \hline
-Uranium nitride (UN) & \{14.420\} & \{13.619\} & \{20.9\} (1000 K) & \{3123\} & & & & \{7.5\} (300 K) \\
+Uranium nitride (UN) & \{14.420\} & \{13.619\} & \{20.9\} (1000 K) & 1 \{3123\} & & & & \{7.5\} (300 K) \\
 \hline
-Uranium zirconium (UZr) alloys & \\
+%Uranium zirconium (UZr) alloys & \\
+U-20\%Pu-10\%Zr & & \{14.1\} & \{16\} & \{1400\} &  &  & & \{17\}\\
+%http://www.sciencedirect.com/science/article/pii/S1738573315000753
 \hline
-Mixed Oxides (MOX)  & \\
+Uranium silicide (U$_3$Si$_2$)  & \{12.2\} & \{11.3\} & \{22\} (1000 K) & \{1938\} & & & & \{16.1\}\\
 \hline
 Plutonium (Pu)  & \{19.840\} & \{19.840\} & \{6.5\} (508 K) & \{913\} & & & & \{33.9\} (400-470 K) \\
 \hline
-Mixed Nitrides  &  \\
-\hline
+%Mixed Nitrides  &  \\
+%\hline
 Salt Fuels &  \\
 \hline
 Liquid Fuels &  \\
 \hline
+% Mixed Oxides (MOX)
 
 \end{tabular}
 \end{center}
-
+% Maybe we should have a table for things with numbers and a second table for numbers and qualities that are harder to determine. If they aren't good in the first table, they aren't worth exploring in the second.
 
 
 
