@@ -135,7 +135,7 @@ Found below is a table of the desirable attributes for the fuel, cladding, and c
 
 
 \begin{center}
-\begin{tabular}[c]{| c | c | c | c |}
+\begin{tabular}[c]{| c | p{1.5cm} | p{1.5cm} | p{2cm} |}
 \hline
 \multicolumn{4}{|c|}{Desirable Component Attributes} \\
 \hline
@@ -162,7 +162,7 @@ Found below is a table of the desirable attributes for the fuel, cladding, and c
 \cline{2-4}
 \multirow{2}{*}{Chemical Properties} & \multicolumn{2}{|c|}{Brittle/Ductile} & Optical Transparency \\
 \cline{2-4}
- & Low Swelling/Growth & High Strength & Easy Pumping \\
+ & Low Swelling / Growth & High Strength & Easy Pumping \\
 \cline{2-4}
  &  & Retains Fission Products &  \\
 \hline
@@ -172,13 +172,13 @@ Found below is a table of the desirable attributes for the fuel, cladding, and c
 For these three major components, the list of desirable attributes can be used to determine a set of compatible materials.  After a brainstorming session, the table below includes the major choices of materials that would be suitable for each component.
 
 \begin{center}
-\begin{tabular}[c]{| c | c | c | c |}
+\begin{tabular}[c]{| p{1.5cm} | p{2cm} | p{2cm} |}
 \hline
 \multicolumn{3}{|c|}{Potential Component Materials} \\
 \hline
 Fuel & Cladding & Coolant \\
 \hline
-Uranium dioxide (UO2) & Zirconium alloys & Sodium (Na) \\
+Uranium dioxide (UO$_2$) & Zirconium alloys & Sodium (Na) \\
 \hline
 Uranium carbide (UC) & Steels & Sodium potassium (NaK) \\
 \hline
@@ -194,9 +194,50 @@ Mixed Nitrides  & Ceramics & Chlorides \\
 \hline
 Salt Fuels & Hastelloys & Noble Gases (e.g., Argon, Helium) \\
 \hline
-Liquid Fuels & & Nitrogen (N2) \\
+Liquid Fuels & & Nitrogen (N$_2$) \\
 \hline
 \end{tabular}
 \end{center}
+
+All of these and more materials could potentially serve as fuel, cladding, coolant, and other components (structural, piping, etc.) for the reactor core.  However, the goal is to achieve an optimal design to take advantage of all available materials for accomplishing the mission of the reactor's construction.  With seemingly endless options, a method for narrowing down materials with less desirable properties for each of the reactor core components must be eliminated over more suitable materials.  
+
+One possible method of narrowing material selection choices is to create a grading matrix.  Criteria which are crucial for particular reactor component functions will have a rating given to each material; a "1" indicates the material is nearly perfectly suitable for such a function, and "5" indicates the material will not function well for this purpose.
+
+A notable limitation of this grading rubric is that certain material properties may be perfectly suitable for a reactor component function, and increasing this value in the material will produce no further advantage.  This must be taken into account when creating the rubric; for example, the melting point for a coolant typically is recommended to be at room temperature or below, but having a melting temperature at temperatures incredibly lower than this may not be useful.
+
+The grading matrix is broken into three parts for the fuel, cladding, and coolant separately.  The authors brainstormed and included a grading based on technical data which is included (where available) and otherwise determined through recommendations of previous reactor designers and analysts, operating reactor experience, etc.
+
+
+\begin{center}
+\begin{tabular}[c]{| p{1.8cm} | p{1.2cm} | p{2.05cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} | p{2cm} |}
+\hline
+\multicolumn{8}{|c|}{Potential Fuel Materials Grading Matrix} \\
+\hline
+ & Physical Density \{g/cm$^3$\} & Fission Material Density \{g/cm$^3$\} & Thermal Conductivity  \{W/(m-K)\} & Melting Point \{K\} & Criticality & Chemical Compatibility & Brittle / Ductile & Linear Expansion Coefficient \{10$^6$(1/K)\} \\
+\hline
+Uranium dioxide (UO$_2$) & \{10.963\} & \{9.664\} & \{2.6\} (1523 K, theor. density) & 1 \{3120\} & & 1 & & \{9.8\} (300 K)  \\
+\hline
+Uranium carbide (UC) & \{13.630\} & \{12.970\} & \{23.0\} (700 K) & \{2793\} & & & & \{10.5\} (300 K)\\
+\hline
+Uranium nitride (UN) & \{14.420\} & \{13.619\} & \{20.9\} (1000 K) & \{3123\} & & & & \{7.5\} (300 K) \\
+\hline
+Uranium zirconium (UZr) alloys & \\
+\hline
+Mixed Oxides (MOX)  & \\
+\hline
+Plutonium (Pu)  & \{19.840\} & \{19.840\} & \{6.5\} (508 K) & \{913\} & & & & \{33.9\} (400-470 K) \\
+\hline
+Mixed Nitrides  &  \\
+\hline
+Salt Fuels &  \\
+\hline
+Liquid Fuels &  \\
+\hline
+
+\end{tabular}
+\end{center}
+
+
+
 
 \end{document}
