@@ -224,28 +224,30 @@ A notable limitation of this grading rubric is that certain material properties 
 
 The grading matrix is broken into three parts for the fuel, cladding, and coolant separately.  The authors brainstormed and included a grading based on technical data which is included (where available) and otherwise determined through recommendations of previous reactor designers and analysts, operating reactor experience, etc.
 
-% We need to add the columns: swelling
+% We need to add the columns: swelling, R\&D needs, (max burn up)
 \begin{center}
-\begin{tabular}[c]{| p{1.6cm} | p{1.2cm} | p{2.05cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} | p{1.5cm} | p{2cm} |}
+\hspace*{-2cm}
+\begin{tabular}[c]{| p{1.6cm} | p{1.2cm} | p{2.05cm} | p{1.5cm} | p{1.5cm} | p{2.0cm} | p{1.5cm} | p{1.5cm} | p{2cm} |}
 \hline
-\multicolumn{8}{|c|}{Potential Fuel Materials Grading Matrix} \\
+\multicolumn{9}{|c|}{Potential Fuel Materials Grading Matrix} \\
 \hline
- & Physical Density \{g/cm$^3$\} & Fission Material Density \{g/cm$^3$\} & Thermal Conductivity  \{W/(m-K)\} & Melting Point \{K\} & Reactivity & Chemical Compatibility & Ductility & Linear Expansion Coefficient \{10$^6$(1/K)\} \\
+ & Physical Density \{g/cm$^3$\} & Fission Material Density \{g/cm$^3$\} & Thermal Conductivity  \{W/(m-K)\} & Melting Point \{K\} & Reactivity at.\%inert$\times \sigma_{\gamma}$ \{barn\} & Chemical Compatibility & Ductility & Linear Expansion Coefficient \{10$^6$(1/K)\} \\
 \hline
-Uranium dioxide (UO$_2$) & \{10.963\} & \{9.664\} & 5 \{2.6\} (1523 K, theor. density) & 1 \{3120\} & & 1 & & \{9.8\} (300 K)  \\
+Uranium dioxide (UO$_2$) & \{10.963\} & \{9.664\} & 5 \{2.6\} (1523 K, theor. density) & 1 \{3120\} & 2 \{2.48E-3\} & not sodium & & \{9.8\} (300 K)  \\
 \hline
-Uranium carbide (UC) & \{13.630\} & \{12.970\} & \{23.0\} (700 K) & \{2793\} & & & & \{10.5\} (300 K)\\
+Uranium carbide (UC) & \{13.630\} & \{12.970\} & \{23.0\} (700 K) & \{2793\} & 1 \{1.09E-3\} & & & \{10.5\} (300 K)\\
 \hline
-Uranium nitride (UN) & \{14.420\} & \{13.619\} & \{20.9\} (1000 K) & 1 \{3123\} & & & & \{7.5\} (300 K) \\
+Uranium nitride (UN) & \{14.420\} & \{13.619\} & \{20.9\} (1000 K) & 1 \{3123\} & 1 \{1.90E-3\} & & & \{7.5\} (300 K) \\
 \hline
 %Uranium zirconium (UZr) alloys & \\
-U-20\%Pu-10\%Zr & & \{14.1\} & \{16\} & \{1400\} &  &  & & \{17\}\\
+U-20\%Pu-10\%Zr & & \{14.1\} & \{16\} & \{1400\} & 4 \{3.12E-1\} &  & & \{17\}\\
 %http://www.sciencedirect.com/science/article/pii/S1738573315000753
 \hline
-Uranium silicide (U$_3$Si$_2$)  & \{12.2\} & \{11.3\} & \{22\} (1000 K) & \{1938\} & & & & \{16.1\}\\
+Uranium silicide (U$_3$Si$_2$)  & \{12.2\} & \{11.3\} & \{22\} (1000 K) & \{1938\} & \{8.24E-3\} & & & \{16.1\}\\
 \hline
-Plutonium (Pu)  & \{19.840\} & \{19.840\} & \{6.5\} (508 K) & \{913\} & & & & \{33.9\} (400-470 K) \\
-\hline
+%Plutonium (Pu)  & \{19.840\} & \{19.840\} & \{6.5\} (508 K) & \{913\} & & & & \{33.9\} (400-470 K) \\
+% We really shouldn't use Pu, 
+%\hline
 %Mixed Nitrides  &  \\
 %\hline
 Salt Fuels &  \\
@@ -257,6 +259,30 @@ Liquid Fuels &  \\
 \end{tabular}
 \end{center}
 % Maybe we should have a table for things with numbers and a second table for numbers and qualities that are harder to determine. If they aren't good in the first table, they aren't worth exploring in the second.
+
+From this comparison we see that Uranium Nitride and the Uranium metal alloy are likely to be quite favorable. The uranium metal alloy has been proven in EBR-II. Note that these results are not final, later in the design process we may change our priorities and select a different material for investigation.
+
+Next we examine several potential coolants. Several properties and figures of merit are listed in Table~\ref{tab:coolants}. For the figures of merit, lower numbers are better. The turbulent, forced convection figure of merit is calculated from the thermo-physical properties as $FOM=\left(\frac{\mu^2}{\beta\rho^2c_p^{1.8} } \right)^{0.36}$. The Natural Circulation figure of merit is $FOM= \left( \frac{\mu^2}{\beta\rho^2c_p^{1.8}}  \right)^{0.36}$. The heat exchanger figure of merit is given by $FOM= \frac{\mu^{0.2}}{\rho^{0.3}c_p^{0.6}k^{0.6}}$
+
+\begin{table} \label{tab:coolants}
+\begin{tabular}{|l|c|c|c|c|c|c|}
+\centering
+%\hline
+Coolant & Melting Temp, $^{\circ}$C & Boiling Temp, $^{\circ}$C & $\sigma_a$ at 0.1MeV & Pump FOM & Nat Circ FOM & HX FOM \\
+\hline
+Sodium & 97.8 & 882.8 &  & 0.137 & 9.93 & 0.0135 \\
+\hline
+NaK & 19 & 825.6 & & 0.456 & 12.9 & 0.0299\\
+\hline
+Lead & 327.5 & 2018 & & 0.560 & 11.4 & 0.0821\\
+\hline
+Pb-Bi & 178.9 & 1670 & & 0.573 & 9.80 & 0.0870\\
+\hline
+FLiNaK & 454 & 1570 & & 0.013 & 4.57 & 0.182\\
+\hline
+\end{tabular}
+\caption{Material property comparison for potential coolants.}
+\end{table}
 
 
 
