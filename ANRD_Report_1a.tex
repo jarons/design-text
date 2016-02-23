@@ -226,7 +226,7 @@ The grading matrix is broken into three parts for the fuel, cladding, and coolan
 
 % We need to add the columns: swelling, R\&D needs, (max burn up)
 \begin{center}
-\hspace*{-2cm}
+\hspace*{-2cm} %this is tacky and dangerous
 \begin{tabular}[c]{| p{1.6cm} | p{1.2cm} | p{2.05cm} | p{1.5cm} | p{1.5cm} | p{2.0cm} | p{1.5cm} | p{1.5cm} | p{2cm} |}
 \hline
 \multicolumn{9}{|c|}{Potential Fuel Materials Grading Matrix} \\
@@ -265,7 +265,11 @@ From this comparison we see that Uranium Nitride and the Uranium metal alloy are
 Next we examine several potential coolants. Several properties and figures of merit are listed in Table~\ref{tab:coolants}. For the figures of merit, lower numbers are better. The turbulent, forced convection figure of merit is calculated from the thermo-physical properties as $FOM=\left(\frac{\mu^2}{\beta\rho^2c_p^{1.8} } \right)^{0.36}$. The Natural Circulation figure of merit is $FOM= \left( \frac{\mu^2}{\beta\rho^2c_p^{1.8}}  \right)^{0.36}$. The heat exchanger figure of merit is given by $FOM= \frac{\mu^{0.2}}{\rho^{0.3}c_p^{0.6}k^{0.6}}$
 
 \begin{table} \label{tab:coolants}
+\hspace*{-2cm} %this is tacky and dangerous
 \begin{tabular}{|l|c|c|c|c|c|c|}
+%
+% We need to include: activation (problems for maintenance); chemical stability (needs cover gas?);
+%
 \centering
 %\hline
 Coolant & Melting Temp, $^{\circ}$C & Boiling Temp, $^{\circ}$C & $\sigma_a$ at 0.1MeV, $10^-5$ b & Pump FOM & Nat Circ FOM & HX FOM \\
@@ -281,9 +285,38 @@ Pb-Bi & 178.9 & 1670 & 428.6 & 0.573 & 9.80 & 0.0870\\
 FLiNaK & 454 & 1570 & 2.541 & 0.013 & 4.57 & 0.182\\
 \hline
 \end{tabular}
-\caption{Material property comparison for potential coolants.}
+\caption{Material property comparison for potential liquid coolants.}
 \end{table}
 
+Next we'll consider gaseous coolants. Gas coolants have poorer heat transfer properties, but they are easier to connect to power conversion systems. Gases naturally tolerate higher temperatures, which facilitates higher thermal efficiencies. However, that efficiency is diminished by additional pumping power requirements.
+For gases like Helium, leakage can be a significant concern. 
+
+\begin{table} \label{tab:coolants}
+\hspace*{-2cm} %this is tacky and dangerous
+\begin{tabular}{|l|c|c|c|c|c|c|}
+%
+% We need to include: leakage issues; chemical stability;
+%
+% Probably don't need: Boiling Temp; 
+%
+\centering
+%\hline
+Coolant &  $\sigma_a$ at 0.1MeV,  & Pump FOM & Nat Circ FOM & HX FOM & Corrosion Issues & Leakage\\
+ & $10^-5$ b & & & & &\\
+\hline
+Helium &  & & & & Diffusion into clad/structures? & highest\\
+\hline
+CO$_2$ & & & & & Carbrization? &\\
+\hline
+Air & \\
+\hline
+N$_2$ &\\
+\hline
+Argon & &\\
+\hline
+\end{tabular}
+\caption{Material property comparison for potential gas coolants.}
+\end{table}
 
 
 \end{document}
