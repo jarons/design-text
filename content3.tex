@@ -1,24 +1,6 @@
 \chapter{How to Begin}
 This part might go in Chapter 1???
 
-\section{Initial Decisions}
-Some decisions can be made immediately based on engineering knowledge and an understanding of the design goals. Two of the most generic questions are What enrichment is acceptable? and What energy spectrum should the reactor have? The constraint of using natural uranium will quickly suggest a thermal reactor with only a few options for moderators. The desire to breed plutonium will dictate a high-neutron energy spectrum. 
-
-After the obvious choices have been made, but without accidentally eliminating any viable choices, there are a few fundamental decisions to make. The choice of moderator (if needed), coolant, fuel isotope, and chemical fuel form are the fundamental features around which the reactor will be designed. These decisions do not require any computer simulations if the correct figures of merit are identified and used. 
-
-% Chris will probably want to expand this part quite a bit
-% \subsection{Figures of Merit}
-
-While it is easier to describe a linear design process, that is usually not how it works in practice. Initially there will likely be several candidate designs which should be investigated in parallel. The number of competing designs will decrease as time goes on. 
-Furthermore, design textbooks generally present the design process as a chronological journey through a serious of tasks. But this is not accurate, because design is an iterative process. So then the flow charts are given arrows for every point to every preceding point. 
-With such a tangled picture in mind, we wish to emphasize from the outset that the design process will involve regular backtracking, especially since ideas are not generated only during brainstorming sessions.
-
-After these have been determined, the basic core geometry comes next. Fuel pins increase centerline temperatures, but minimize the amount of cladding required, thus the neutronics expert prefers this option. The heat transfer expert prefers a design that tends towards a plate with more surface area per volume. 
-%discuss other options: molten fuel, dispersions, particles
-At this point an optimized design is unlikely and even unneeded. More likely each analysis will provide the limits of a feasible design space. 
-
-Insert a figure: flow chart or reactor categorization.
-
 \section{Design Progression}
 While it may be tempting to attack a design problem with all of the computational tools at your disposal, that may not be the best approach. Informed decisions at the beginning of the project reduce the amount of work that you and your computer will have to do. 
 In general, low-fidelity methods or formulations are entirely satisfactory at the start. Simple calculations also tend to provide understanding and intuition that will be useful as the design process continues.
@@ -26,5 +8,72 @@ In general, low-fidelity methods or formulations are entirely satisfactory at th
 As the design matures, so should the tools being used. Think of computer codes as sieves. Low-fidelity codes will filter out designs that obviously won't work and more sophisticated tools may be needed to decide between closely competing design alternatives.
 
 That being said, the ultimate goal is to reduce the time needed to generate a satisfactory design. There is no reason to spend more time on a less accurate method. For example, spending an hour to calculate the four-factor formula by hand with analytical methods is not as wise as waiting 15 minutes for the results from a Monte Carlo simulation. So the rough-cut tools you use should also be fast and easy to use.
+
+While it is easier to describe a linear design process, that is usually not how it works in practice. Initially there will likely be several candidate designs which should be investigated in parallel. The number of competing designs will decrease as time goes on. 
+Furthermore, design textbooks generally present the design process as a chronological journey through a serious of tasks. But this is not accurate, because design is an iterative process. So then the flow charts are given arrows for every point to every preceding point. 
+With such a tangled picture in mind, we wish to emphasize from the outset that the design process will involve regular backtracking, especially since ideas are not generated only during brainstorming sessions.
+The important thing is keep moving and maintain a willingness to backtrack, modify, and change your design. Trying to design an optimal reactor from the outset will certainly lead to slow going. So do your best to stay out of rabbit holes at the beginning and leave the details for later.
+
+Insert a figure: flow chart or reactor categorization.
+
+\section{Initial Decisions}
+Some decisions can be made immediately based on engineering knowledge and an understanding of the design goals. Two of the most generic questions are What enrichment is acceptable? and What energy spectrum should the reactor have? The constraint of using natural uranium will quickly suggest a thermal reactor with only a few options for moderators. The desire to breed plutonium will dictate a high-neutron energy spectrum. 
+
+After the obvious choices have been made, but without accidentally eliminating any viable choices, there are a few fundamental decisions to make. The choice of moderator (if needed), coolant, fuel isotope, and chemical fuel form are the fundamental features around which the reactor will be designed. These decisions do not require any computer simulations if the correct figures of merit are identified and used. 
+
+% Chris will probably want to expand this part quite a bit
+
+\subsection{Coolant Selection}
+Nuclear engineers often think of neutronic design as the critical (pun intended) part of the reactor system. However, neutron transport is actually a smaller part of the design than one would think.
+In any reactor that produces power, cooling is essential. When the goal is producing electricity, managing the working fluid is the key to reliability and efficiency. Thus we begin with a discussion of coolants.
+
+The first question is, Is this a thermal spectrum reactor? If the answer is no, many low-Z coolants are automatically eliminated from consideration.
+Next, the desired operating temperatures need to be assigned ballpark numbers. This is determined by estimating the capabilities of heat exchangers, turbo-machinery, and structural and piping materials. You can prescribe these limits later if necessary, remember design is an iterative process. 
+
+The following coolant properties are desirable for any reactor. \emph{High heat capacity}. This allows the coolant to absorb more energy per change in temperature. \emph{Non-corrosive}. Whatever the coolant contacts, or has the potential to contact, it should be compatible with. If the coolant corrodes the cladding, it will limit the fuel cycle length and sabotage the fuel utilization. \emph{Radiation stability} The coolant in the core will experience high radiation fields and radiolysis and neutron activation will occur. The coolant should be selected so that these phenomena are minimized. \emph{Low cross section} Neutrons absorbed in the coolant or coolant impurities will diminish the performance of the reactor.%\cite{Hausner}
+
+%water
+% liquid metal
+% gas
+% salts
+% other
+
+\subsection{Moderator Selection}
+For thermal reactors, a low-Z element is needed to slow down the fission neutrons to low energy levels where fission is more likely to occur. It must also do this without absorbing too many neutrons. Hydrogen is an obvious choice because of its ability to stop a neutron completely with only one scattering interaction and its low mean free path. Deuterium comes to mind next because it absorbs neutrons 1000 times less. Graphite is a desirable moderator because it can withstand extremely high temperatures.
+%reproduce Duderstadt discussion and table
+
+% \subsection{Figures of Merit}
+
+\subsection{Fuel Selection}
+The requirements of nuclear fuel are very demanding due to the environment it must withstand. Hausner %\cite{Hausner}
+lists the following requirements for nuclear fuel
+\begin{itemize}
+\item[1.] It must be able to tolerant radiation damage
+\item[2.] It must not corrode upon contact with the cladding or coolant.
+\item[3.] It or its impurities must not absorb too many neutrons
+\item[4a.] It must be able to withstand the temperature gradient caused by the heat it generates
+\item[4b.] It should have high thermal conductivity (or appropriate dimensions) in order to transmit its heat to the coolant
+\item[5.] It must be able to withstand the thermal cycles that it will experience during operation
+\item[6.] It must be able to withstand the mechanical loads placed upon it
+\item[7.] It must be inexpensive
+\item[8.] It should lend itself to the fuel cycle in which it will be used, e.g. easy to reprocess
+\end{itemize} 
+
+Also it is generally preferable to have a high density in order to ease requirements for enrichment.
+
+\subsection{Cladding Selection}
+Material selection for cladding is important because it is the first line of defense for retaining radioactive material.
+Even for reactor designs with no cladding, e.g. a molten salt-fueled reactor, it is necessary to select compatible and durable materials to contain the nuclear material and working fluid.
+Selecting reliable cladding and piping materials allows the reactor to run smoothly with fewer interruptions. The primary requirement is for the cladding to be chemically compatible with both the fuel and the coolant. Superior corrosion performance is the foremost concern.
+
+The cladding material must also be capable of enduring an extreme environment of neutron, gamma, and fission product irradiation and high temperatures. It must also maintain its strength and ductility while absorbing as few as possible neutrons. 
+After all this, it would be preferable if the material was cheap and easy to manufacture.
+
+\section{Geometric Specification}
+After these have been determined, the basic core geometry comes next. Fuel pins increase centerline temperatures, but minimize the amount of cladding required, thus the neutronics expert prefers this option. The heat transfer expert prefers a design that tends towards a plate with more surface area per volume. 
+%discuss other options: molten fuel, dispersions, particles
+At this point an optimized design is unlikely and even unneeded. More likely each analysis will provide the limits of a feasible design space. 
+
+
 
 
