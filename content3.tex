@@ -21,6 +21,11 @@ Some decisions can be made immediately based on engineering knowledge and an und
 
 After the obvious choices have been made, but without accidentally eliminating any viable choices, there are a few fundamental decisions to make. The choice of moderator (if needed), coolant, fuel isotope, and chemical fuel form are the fundamental features around which the reactor will be designed. These decisions do not require any computer simulations if the correct figures of merit are identified and used. 
 
+Often selection is not straightforward because the materials are better at some things and worse in other respects. In cases like these, the decision is which set of issues you want to deal with.
+The way each issue is weighted will influence the decision. For example, if low R\&D requirements is a priority, UO$_2$ will be selected and the poor thermal conductivity will have to be dealt with. 
+Dichotomies like this help explain why there remains such a diversity of opinions and research efforts.
+In other words, there may be more than one acceptable answer, but it is important to explain why the selection was made.
+
 % Chris will probably want to expand this part quite a bit
 
 \subsection{Coolant Selection}
@@ -37,6 +42,34 @@ The following coolant properties are desirable for any reactor. \emph{High heat 
 % gas
 % salts
 % other
+
+\subsubsection{Comparison of Liquid and Gaseous Coolants}
+The phase of the coolant is an important consideration. Both liquid and gaseous coolants have their advantages and disadvantages.
+If gaseous coolant is chosen, the chemically inert noble gases become attractive options.
+
+\begin{table}[!ht]
+\begin{tabular}{c|c|c|c}
+  Qualtiy & Liquid & Two-Phase & Gaseous \\
+  \hline
+  Heat Capacity & High & High & Low \\
+  Phase Change & Limiting condition & Desirable & Not an issue \\
+  Heat Transfer Coefficient & High & Very high & Low \\
+  Natural Circulation & Good & Very good & Poor \\
+  Pumping Power & Low/good & Low/good & High/bad\\
+  Neutron Absorption & High & Less & Low\\
+  Direct Cycle & No & Yes, Rankine & Yes, Brayton\\
+  Low Pressure & Maybe & No & No\\
+  %
+  \hline
+\end{tabular}
+\caption{Phase of coolant}
+\end{table}
+
+%\subsubsection{Comparison of Molten Salts and Liquid Metals}
+%\subsubsection{Comparison of Moderating Coolants}
+% or:
+%\subsubsection{Comparison of Liquid Coolants}
+
 
 \subsection{Moderator Selection}
 For thermal reactors, a low-Z element is needed to slow down the fission neutrons to low energy levels where fission is more likely to occur. It must also do this without absorbing too many neutrons. Hydrogen is an obvious choice because of its ability to stop a neutron completely with only one scattering interaction and its low mean free path. Deuterium comes to mind next because it absorbs neutrons 1000 times less. Graphite is a desirable moderator because it can withstand extremely high temperatures.
