@@ -262,61 +262,96 @@ Liquid Fuels &  \\
 
 From this comparison we see that Uranium Nitride and the Uranium metal alloy are likely to be quite favorable. The uranium metal alloy has been proven in EBR-II. Note that these results are not final, later in the design process we may change our priorities and select a different material for investigation.
 
-Next we examine several potential coolants. Several properties and figures of merit are listed in Table~\ref{tab:coolants}. For the figures of merit, lower numbers are better. The turbulent, forced convection figure of merit is calculated from the thermo-physical properties as $FOM=\left(\frac{\mu^2}{\beta\rho^2c_p^{1.8} } \right)^{0.36}$. The Natural Circulation figure of merit is $FOM= \left( \frac{\mu^2}{\beta\rho^2c_p^{1.8}}  \right)^{0.36}$. The heat exchanger figure of merit is given by $FOM= \frac{\mu^{0.2}}{\rho^{0.3}c_p^{0.6}k^{0.6}}$
+Next we examine several potential coolants. Several properties and figures of merit are listed in Table~\ref{tab:coolant_properties}. For the figures of merit, lower numbers are better. The turbulent, forced convection figure of merit is calculated from the thermo-physical properties as $FOM=\left(\frac{\mu^2}{\beta\rho^2c_p^{1.8} } \right)^{0.36}$. The Natural Circulation figure of merit is $FOM= \left( \frac{\mu^2}{\beta\rho^2c_p^{1.8}}  \right)^{0.36}$. The heat exchanger figure of merit is given by $FOM= \frac{\mu^{0.2}}{\rho^{0.3}c_p^{0.6}k^{0.6}}$
 
-\begin{table} \label{tab:coolants}
+\begin{table} \label{tab:coolant_properties}
 \hspace*{-2cm} %this is tacky and dangerous
-\begin{tabular}{|l|c|c|c|c|c|c|}
+\begin{tabular}{|l|c|c|p{2.5cm}|c|c|c|}
 %
 % We need to include: activation (problems for maintenance); chemical stability (needs cover gas?);
 %
-\centering
-%\hline
-Coolant & Melting Temp, $^{\circ}$C & Boiling Temp, $^{\circ}$C & $\sigma_\gamma $ at 0.1MeV, $10^-5$ b & Pump FOM & Nat Circ FOM & HX FOM \\
+%\centering
+\hline
+Coolant & Melting Temp, $^{\circ}$C & Boiling Temp, $^{\circ}$C & $\sigma_\gamma $ at 0.1 MeV, $10^{-5}$ b & Pump FOM & Nat Circ FOM & HX FOM \\
 \hline
 Sodium & 97.8 & 882.8 & 1.32 & 0.137 & 9.93 & 0.0135 \\
 \hline
 NaK (23\%-77\%) & -12.6 & 784 & 152 & 0.456 & 12.9 & 0.0299\\
 \hline
-Lead & 327.4 & 1745 & $\sim$ 60 & 0.560 & 11.4 & 0.0821\\
+Lead & 327.4 & 1745 & 256.2 & 0.560 & 11.4 & 0.0821\\
 \hline
-Pb-Bi (44.5\%-55.5\%) & 125 & 1638 & $\sim$ 400 & 0.573 & 9.80 & 0.0870\\
+Pb-Bi (44.5\%-55.5\%) & 125 & 1638 & 450.1 & 0.573 & 9.80 & 0.0870\\
 \hline
 FLiNaK & 454 & 1570 & 2.541 & 0.013 & 4.57 & 0.182\\
 \hline
 \end{tabular}
-\caption{Material property comparison for potential liquid coolants.}
+\caption{Material property comparison for potential liquid coolants.\cite{IAEA_1}}
 \end{table}
 
 Next we'll consider gaseous coolants. Gas coolants have poorer heat transfer properties, but they are easier to connect to power conversion systems. Gases naturally tolerate higher temperatures, which facilitates higher thermal efficiencies. However, that efficiency is diminished by additional pumping power requirements.
 For gases like Helium, leakage can be a significant concern. 
 
-\begin{table} \label{tab:coolants}
+\begin{table} \label{tab:gases}
 \hspace*{-2cm} %this is tacky and dangerous
-\begin{tabular}{|l|c|c|c|c|c|c|}
+\begin{tabular}{|l|c|c|c|c|p{2.75cm}|c|}
 %
-% We need to include: leakage issues; chemical stability;
+% We need to include: leakage issues; chemical stability; HX FOM, absorption 
 %
-% Probably don't need: Boiling Temp; 
-%
-\centering
-%\hline
-Coolant &  $\sigma_a$ at 0.1MeV,  & Pump FOM & Nat Circ FOM & HX FOM & Corrosion Issues & Leakage\\
- & $10^-5$ b & & & & &\\
+%\centering
 \hline
-Helium &  & & & & Diffusion into clad/structures? & highest\\
+%Coolant &  $\sigma_a$ at 0.1MeV,  & Pump FOM & Nat Circ FOM & HX FOM & Corrosion Issues & Leakage\\
+% & $10^-5$ b & & & & &\\
+Coolant &  Cp & Density, g/cm$^3$  & Pump FOM & Nat Circ FOM & Corrosion Issues & Cost\\
 \hline
-CO$_2$ & & & & & Carbrization? &\\
+Helium & \textbf{5.18} & 0.00966 & 14.5 & 56.9 & Diffusion into clad/structures? Diffusion bonding & highest \& most leakage\\
 \hline
-Air & \\
+CO$_2$ & 1.27 & \textbf{0.104} & \textbf{6.31} & \textbf{25.1} & Dissociation+ Carburization &  low\\
 \hline
-N$_2$ &\\
+Air & & & & & Oxidization & lowest\\
 \hline
-Argon & &\\
+N$_2$ & 1.18 & 0.0646 & 20.1 & 37.9 & Dissociation+? & low \\
+\hline
+Argon & 0.552 & 0.146 & 33.5 & 29.8 & Diffusion bonding & moderate\\
 \hline
 \end{tabular}
-\caption{Material property comparison for potential gas coolants.}
+\caption{Material property comparison for potential gas coolants. Properties listed at 20MPa and 700$^\circ$C except for Argon which is at 400 degrees.} %cite NIST
+\end{table}
+
+\begin{table}[ht]
+% Problem:!!! some properties are FLiNaK some are chlorides!!!
+\begin{tabular}{l|l|l|l|l|}
+          & Sodium & Lead & CO$_2$ & Salt\\
+  \hline
+  Freezing & 2. 97.8C & 3. 327C & 1. Gas & 4. 454C\\ %FLiNaK
+  Boiling & 4. 883C & 2. 1745C & 1. Gas & 3. 1570C\\ %FLiNaK
+  Corrosion & 1. & 2. & 2. & 3.? \\
+  Absorption & 2. & 3. & 1. & 4. \\
+  Coolant Temp Coeff & 3. & 2. & 1. & 4.\\
+  Moderating Power & 4. 0.0078 & 1. 0.0024 & 2. 0.0025 & 3. 0.0073\\
+  Radioactivity & 3. Na-24 & 2. Po-210 & 1. & 4. \\
+  Radiolysis & 1. N/A & 1. N/A & 2. & 4. \\
+  Stability & 4. Pyrophoric & 1. & 1. & 1? \\
+  Toxicity & 1. & 4. & 1. & 3? \\
+  Pressurization & 1. Low & 1. Low & 4. High & 1. Low \\
+  Kinematic Viscosity, m$^2$/s & 2. 3.02E-7 & 1. 1.92E-7 & 3. 4.00E-7 & 4. 1.49E-3 \\ 
+  %Dynamic Viscosity, Pa-s & 2. 2.55E-4 & 3. 2.02E-3 & 1. 4.17E-5 & 4. 3E-3 \\
+  Pumping Power, MW \cite{coolant_comparison} & 2. 3.82 & 3. 7.41 & 4. 34.3 & 1. 3.45 \\
+  Natural Circulation \cite{coolant_comparison} & 1. 40.4 & 2. 43.6 & 3. 70.1 & 4. 98.3 \\
+  Power Density(kW/L) & 1. 290 & 3. 112  & 4. 85.4 & 2. 130 \\
+  Power Conversion & 4. Intermediate loop & 2. & 1. Direct Cycle & 2. \\
+  Transparent & 4. No & 4. No & 1. Yes & 1. Yes\\
+  % Heat transfer coefficient: heat exchanger
+  $\rho c_p$ & 3. 1.07 & 2. 1.55 & 4. 0.18 & 1. 1.92\\   % (rho)Cp: absorbs decay heat
+\end{tabular}
+\caption{Exhaustive comparison of reactor coolants.\cite{coolant_comparison}}
 \end{table}
 
 
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliographystyle{ieeetr}
+\bibliography{report_bib}
 \end{document}
