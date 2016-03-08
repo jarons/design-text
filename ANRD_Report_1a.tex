@@ -262,11 +262,23 @@ Uranium silicide (U$_3$Si$_2$)  & \{12.2\} & \{11.3\} & \{22\} (1000 K) & \{1938
 
 From this comparison we see that Uranium Nitride and the Uranium metal alloy are likely to be quite favorable. The uranium metal alloy has been proven in EBR-II. Note that these results are not final, later in the design process we may change our priorities and select a different material for investigation.
 
-Next we examine several potential coolants. Several properties and figures of merit are listed in Table~\ref{tab:coolant_properties}. For the figures of merit, lower numbers are better. The turbulent, forced convection figure of merit is calculated from the thermo-physical properties as $FOM=\left(\frac{\mu^2}{\beta\rho^2c_p^{1.8} } \right)^{0.36}$. The Natural Circulation figure of merit is $FOM= \left( \frac{\mu^2}{\beta\rho^2c_p^{1.8}}  \right)^{0.36}$. The heat exchanger figure of merit is given by $FOM= \frac{\mu^{0.2}}{\rho^{0.3}c_p^{0.6}k^{0.6}}$
+Next we examine several potential coolants. Several properties and figures of merit are listed in Table~\ref{tab:coolant_properties}. For the figures of merit, lower numbers are better. The turbulent, forced convection figure of merit is calculated from the thermo-physical properties as 
+\begin{equation}
+FOM=\left(\frac{\mu^2}{\beta\rho^2c_p^{1.8} } \right)^{0.36}\,.
+\end{equation}
+The Natural Circulation figure of merit is
+\begin{equation}
+FOM= \left( \frac{\mu^2}{\beta\rho^2c_p^{1.8}}  \right)^{0.36} \,.
+\end{equation}
+ The heat exchanger figure of merit is given by 
+\begin{equation}
+FOM= \frac{\mu^{0.2}}{\rho^{0.3}c_p^{0.6}k^{0.6}}
+\end{equation} 
+ 
 
 \begin{table} \label{tab:coolant_properties}
 \hspace*{-2cm} %this is tacky and dangerous
-\begin{tabular}{|l|c|c|p{2.5cm}|c|c|c|}
+\begin{tabular}{|p{2.8cm}|c|c|p{2.5cm}|c|c|c|}
 %
 % We need to include: activation (problems for maintenance); chemical stability (needs cover gas?);
 %
@@ -284,7 +296,7 @@ Pb-Bi (44.5\%-55.5\%) & 125 & 1638 & 450.1 & 0.573 & 9.80 & 0.0870\\
 \hline
 FLiNaK & 454 & 1570 & 2.541 & 0.013 & 4.57 & 0.182\\
 \hline
-NaCl-KCl-MgCl2 (30\%-20\%-50\%) & 396 & 2500 &  &  &  & \\
+NaCl-KCl-MgCl$_2$ (30\%-20\%-50\%) & 396 & 2500 &  &  &  & \\
 \hline
 \end{tabular}
 \caption{Material property comparison for potential liquid coolants.\cite{IAEA_1}}
