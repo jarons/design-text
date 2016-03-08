@@ -250,10 +250,10 @@ Uranium silicide (U$_3$Si$_2$)  & \{12.2\} & \{11.3\} & \{22\} (1000 K) & \{1938
 %\hline
 %Mixed Nitrides  &  \\
 %\hline
-Salt Fuels &  \\
-\hline
-Liquid Fuels &  \\
-\hline
+%Salt Fuels &  \\
+%\hline
+%Liquid Fuels &  \\
+%\hline
 % Mixed Oxides (MOX)
 
 \end{tabular}
@@ -321,16 +321,16 @@ Argon & 0.552 & 0.146 & 33.5 & 29.8 & Diffusion bonding & moderate\\
 
 \begin{table}[ht]
 % Problem:!!! some properties are FLiNaK some are chlorides!!!
-\begin{tabular}{l|l|l|l|l|}
+\begin{tabular}{l|l|l|l|l}
           & Sodium & Lead & CO$_2$ & Salt\\
   \hline
-  Freezing & 2. 97.8C & 3. 327C & 1. Gas & 4. 454C\\ %FLiNaK
-  Boiling & 4. 883C & 2. 1745C & 1. Gas & 3. 1570C\\ %FLiNaK
+  Freezing & 2. 97.8C & 3. 327C & 1. Gas & 4. 396C\\ 
+  Boiling & 4. 883C & 2. 1745C & 1. Gas & 3. 2500C\\ 
   Corrosion & 1. & 2. & 2. & 3.? \\
   Absorption & 2. & 3. & 1. & 4. \\
   Coolant Temp Coeff & 3. & 2. & 1. & 4.\\
   Moderating Power & 4. 0.0078 & 1. 0.0024 & 2. 0.0025 & 3. 0.0073\\
-  Radioactivity & 3. Na-24 & 2. Po-210 & 1. & 4. \\
+  Radioactivity & 3. Na-24 & 2. Po-210 & 1. O-17 & 4. Na-24, K, Cl \\
   Radiolysis & 1. N/A & 1. N/A & 2. & 4. \\
   Stability & 4. Pyrophoric & 1. & 1. & 1? \\
   Toxicity & 1. & 4. & 1. & 3? \\
@@ -344,13 +344,31 @@ Argon & 0.552 & 0.146 & 33.5 & 29.8 & Diffusion bonding & moderate\\
   Transparent & 4. No & 4. No & 1. Yes & 1. Yes\\
   % Heat transfer coefficient: heat exchanger
   $\rho c_p$ & 3. 1.07 & 2. 1.55 & 4. 0.18 & 1. 1.92\\   % (rho)Cp: absorbs decay heat
+  \hline
 \end{tabular}
 \caption{Exhaustive comparison of reactor coolants.\cite{coolant_comparison}}
 \end{table}
 
+Although gas coolants perform quite well in many respects, they require high pressure for effective heat transfer. This means LOCA is the main accident scenario of concern. To achieve the goal of passive safety a second pressure boundary would be required. 
+This is likely not the most economical approach, so the design is back to the same point as an LWR. Also the poor cooling ability of gaseous coolants requires a lower core power density.
+Furthermore, the efficiency of a direct cycle is more or less negated by the high pumping power requirement.
 
+Next, Salt (NaCl-KCl-MgCl$_2$) was discarded because of its high melting point, relatively lacking R\&D, and for neutronic reasons---softer spectrum, higher absorption, and highly positive coolant temperature coefficient.
 
+Sodium is preferred over NaK because it absorbs fewer neutrons. Lead is preferred over lead-bismuth for the same reason. Also it has less corrosion, generates much less Po-210, and it costs less. 
+However, if a high melting point is later deemed to be too large of a problem, these eutectics will be revisited.
 
+Comparing sodium and lead, there are good reasons to use each. Sodium has been a traditionally popular choice because of its heat transfer capabilities. We selected lead coolant which trades some of these properties for a different set of benefits. 
+The first desire that lead satisfies is that it eliminates the violent reaction with water that haunts sodium and NaK systems. This will allow the lead coolant to eliminate the intermediate cooling loop that sodium systems require.
+The main price we have to pay is a higher melting point which will require engineering solutions for startup, shutdown, and refueling. On the other hand, lead has a much higher melting point that relieves the fear of boiling in the core.
+Lead also moderates and absorbs neutrons less. In general we are aiming for the hardest neutron spectrum possible, thus lead is preferable. Less absorption also lowers the slightly positive coolant temperature coefficient, which is good news for safety concerns.
+
+Lead coolant is erosive at higher flow rates $\approx$3 m/s, so a larger pitch will be required. That should be manageable. Lead is chemically toxic, which will affect the plant design, but should not be any more burdensome than a pyrophoric coolant.
+For our purposes we deem the downsides of lead to be worth the benefits it provides.
+
+As the analysis progresses, sodium and Pb-Bi will be compared alongside lead. The secondary options are likely to be primary options in different scenarios where qualities are prioritized differently.
+For example, materials research may effectively solve the problem of Pb-Bi corrosion, making that coolant much more attractive.
+ 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
