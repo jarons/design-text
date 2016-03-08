@@ -297,8 +297,8 @@ For gases like Helium, leakage can be a significant concern.
 %
 % We need to include: leakage issues; chemical stability; HX FOM, absorption 
 %
-\centering
-%\hline
+%\centering
+\hline
 %Coolant &  $\sigma_a$ at 0.1MeV,  & Pump FOM & Nat Circ FOM & HX FOM & Corrosion Issues & Leakage\\
 % & $10^-5$ b & & & & &\\
 Coolant &  Cp & Density, g/cm$^3$  & Pump FOM & Nat Circ FOM & Corrosion Issues & Cost\\
@@ -324,6 +324,7 @@ Argon & 0.552 & 0.146 & 33.5 & 29.8 & Diffusion bonding & moderate\\
   \hline
   Freezing & 2. 97.8C & 3. 327C & 1. Gas & 4. 454C\\ %FLiNaK
   Boiling & 4. 883C & 2. 1745C & 1. Gas & 3. 1570C\\ %FLiNaK
+  Corrosion & 1. & 2. & 2. & 3.? \\
   Absorption & 2. & 3. & 1. & 4. \\
   Coolant Temp Coeff & 3. & 2. & 1. & 4.\\
   Moderating Power & 4. 0.0078 & 1. 0.0024 & 2. 0.0025 & 3. 0.0073\\
@@ -332,9 +333,10 @@ Argon & 0.552 & 0.146 & 33.5 & 29.8 & Diffusion bonding & moderate\\
   Stability & 4. Pyrophoric & 1. & 1. & 1? \\
   Toxicity & 1. & 4. & 1. & 3? \\
   Pressurization & 1. Low & 1. Low & 4. High & 1. Low \\
-  %Pumping Power & 2. & 3. & 4. & 1. \\
-  Pumping Power \cite{coolant_comparison} & 1. 40.4 & 2. 43.6 & 3. 70.1 & 4. 98.3 \\
-  Natural Circulation & 2. & 3. & 4. & 1. \\
+  Kinematic Viscosity, m$^2$/s & 2. 3.02E-7 & 1. 1.92E-7 & 3. 4.00E-7 & 4. 1.49E-3 \\ 
+  %Dynamic Viscosity, Pa-s & 2. 2.55E-4 & 3. 2.02E-3 & 1. 4.17E-5 & 4. 3E-3 \\
+  Pumping Power, MW \cite{coolant_comparison} & 2. 3.82 & 3. 7.41 & 4. 34.3 & 1. 3.45 \\
+  Natural Circulation \cite{coolant_comparison} & 1. 40.4 & 2. 43.6 & 3. 70.1 & 4. 98.3 \\
   Power Density(kW/L) & 1. 290 & 3. 112  & 4. 85.4 & 2. 130 \\
   Power Conversion & 4. Intermediate loop & 2. & 1. Direct Cycle & 2. \\
   Transparent & 4. No & 4. No & 1. Yes & 1. Yes\\
