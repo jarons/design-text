@@ -225,26 +225,29 @@ A notable limitation of this grading rubric is that certain material properties 
 
 The grading matrix is broken into three parts for the fuel, cladding, and coolant separately.  The authors brainstormed and included a grading based on technical data which is included (where available) and otherwise determined through recommendations of previous reactor designers and analysts, operating reactor experience, etc.
 
-% We need to add the columns: swelling, R\&D needs, (max burn up)
+\subsection{Fuel Material}
+
+% We need to add the columns: Ductility R\&D needs, (max burn up)
+% We ought to do the transpose of this table...
 \begin{center}
 \hspace*{-2cm} %this is tacky and dangerous
-\begin{tabular}[c]{| p{1.6cm} | p{1.2cm} | p{2.05cm} | p{1.5cm} | p{1.5cm} | p{2.0cm} | p{1.5cm} | p{1.5cm} | p{2cm} |}
+\begin{tabular}[c]{| p{1.6cm} | p{1.2cm} | p{1.9cm} | p{2.05cm} | p{1.5cm} | p{2.0cm} | p{1.5cm} | p{1.5cm} | p{2cm} |}
 \hline
 \multicolumn{9}{|c|}{Potential Fuel Materials Grading Matrix} \\
 \hline
- & Physical Density \{g/cm$^3$\} & Fission Material Density \{g/cm$^3$\} & Thermal Conductivity  \{W/(m-K)\} & Melting Point \{K\} & Reactivity at.\%inert$\times \sigma_{\gamma}$ \{barn\} & Chemical Compatibility & Ductility & Linear Expansion Coefficient \{10$^6$(1/K)\} \\
+ & Physical Density \{g/cm$^3$\} & Fissile Material Density \{g/cm$^3$\} & Thermal Conductivity  \{W/(m-K)\} & Melting Point \{K\} & Reactivity at.\%inert$\times \sigma_{\gamma}$ \{barn\} & Chemical Compatibility & Swelling & Linear Expansion Coefficient \{10$^6$(1/K)\} \\
 \hline
-Uranium dioxide (UO$_2$) & \{10.963\} & \{9.664\} & 5 \{2.6\} (1523 K, theor. density) & 1 \{3120\} & 2 \{2.48E-3\} & not sodium & & \{9.8\} (300 K)  \\
+Uranium dioxide (UO$_2$) & \{10.963\} & 3 \{9.664\} & 5 \{2.6\} (1523 K, theor. density) & 1 \{3120\} & 2 \{2.48E-3\} & not sodium & 2 & 2 \{9.8\} (300 K)  \\
 \hline
-Uranium carbide (UC) & \{13.630\} & \{12.970\} & \{23.0\} (700 K) & \{2793\} & 1 \{1.09E-3\} & & & \{10.5\} (300 K)\\
+Uranium carbide (UC) & \{13.630\} & 2 \{12.970\} & 1 \{23.0\} (700 K) & 2 \{2793\} & 1 \{1.09E-3\} & carburizes cladding & 2 & 2 \{10.5\} (300 K)\\
 \hline
-Uranium nitride (UN) & \{14.420\} & \{13.619\} & \{20.9\} (1000 K) & 1 \{3123\} & 1 \{1.90E-3\} & & & \{7.5\} (300 K) \\
+Uranium nitride (UN) & \{14.420\} & 2 \{13.619\} & 1 \{20.9\} (1000 K) & 1 \{3123\} & 2 \{1.90E-3\} & needs nitrogen environment & 1 & 3 \{7.5\} (300 K) \\
 \hline
 %Uranium zirconium (UZr) alloys & \\
-U-20\%Pu-10\%Zr & & \{14.1\} & \{16\} & \{1400\} & 4 \{3.12E-1\} &  & & \{17\}\\
+U-20\%Pu-10\%Zr & & 2 \{14.1\} & 2 \{16\} & 4 \{1400\} & 4 \{3.12E-1\} &  & 5 Really bad, 33\% & 1 \{17\}\\
 %http://www.sciencedirect.com/science/article/pii/S1738573315000753
 \hline
-Uranium silicide (U$_3$Si$_2$)  & \{12.2\} & \{11.3\} & \{22\} (1000 K) & \{1938\} & \{8.24E-3\} & & & \{16.1\}\\
+Uranium silicide (U$_3$Si$_2$)  & \{12.2\} & 3 \{11.3\} & 1 \{22\} (1000 K) & 3 \{1938\} & 2 \{8.24E-3\} & & 2? & 1 \{16.1\}\\
 \hline
 %Plutonium (Pu)  & \{19.840\} & \{19.840\} & \{6.5\} (508 K) & \{913\} & & & & \{33.9\} (400-470 K) \\
 % We really shouldn't use Pu, 
@@ -261,8 +264,20 @@ Uranium silicide (U$_3$Si$_2$)  & \{12.2\} & \{11.3\} & \{22\} (1000 K) & \{1938
 \end{center}
 % Maybe we should have a table for things with numbers and a second table for numbers and qualities that are harder to determine. If they aren't good in the first table, they aren't worth exploring in the second.
 
+We assumed thermal expansion was a good feature because of the feedback effects. A higher melting point is good, but the important metric is the margin between operating temperature and failure temperature. The operating temperature is determined by the thermal conductivity, but can be overriden by the fuel geometry. 
+
+The candidate fuels can be compared by their total scores. Lower scores are better so we have: 10 for UC and UN, 12 for U$_3$Si$_2$, 15 for UO$_2$, and 18 for U-Zr alloy. UC and UN are very similar and they will both be considered as the primary choice of fuel material. 
+
+It is widely known that uranium dioxide is terrible because of its thermal conductivity. The high centerline temperature causes many problems: corrosion, cracking, mass relocation, etc. 
+However, the chemical stability, high melting point, and substantial industry familiarity of UO$_2$ make it eligible for further consideration for dispersion in some kind of matrix.
+
+Contrary to our results, the U-Zr metal fuel has been deployed quite successfully, despite swelling up to 33\%. The low melting point of metal fuel mandates a thermal (sodium) bond between the pellet and cladding. 
+With this arrangement and a large gap to accommodate swelling, reliable and inherently safe fuel has been designed and deployed at EBR-II.
+Thus, U-Zr will be considered as the backup fuel material if UN or UC do not perform well enough in future analyses.
+
 From this comparison we see that Uranium Nitride and the Uranium metal alloy are likely to be quite favorable. The uranium metal alloy has been proven in EBR-II. Note that these results are not final, later in the design process we may change our priorities and select a different material for investigation.
 
+\subsection{Coolant Selection}
 Next we examine several potential coolants. Several properties and figures of merit are listed in Table~\ref{tab:coolant_properties}. For the figures of merit, lower numbers are better. The turbulent, forced convection figure of merit is calculated from the thermo-physical properties as 
 \begin{equation}
 FOM=\left(\frac{\mu^2}{\beta\rho^2c_p^{1.8} } \right)^{0.36}\,.
@@ -382,7 +397,24 @@ For our purposes we deem the downsides of lead to be worth the benefits it provi
 As the analysis progresses, sodium and Pb-Bi will be compared alongside lead. The secondary options are likely to be primary options in different scenarios where qualities are prioritized differently.
 For example, materials research may effectively solve the problem of Pb-Bi corrosion, making that coolant much more attractive.
  
-
+\begin{table}[ht]
+%You should do multiple rows: one for each isotope
+\begin{tabular}{|l|l|l|l|l|}
+  \hline
+          & Activation Products & Half-Life & Type & Concentration, Bq/kg\\
+  \hline
+  Sodium & Na-24, Na-22 & 15h, 2.6yr & Gamma & $9.82\times 10^{11}$, $1.45\times 10^7$\\ 
+  NaK & Na-24, Na-22, K-40 & 15h, 2.6yr, $1.25\times10^9$yr & Gamma  &\\  %1.46MeV
+  Lead & Po-210, Bi-208, Pb-205... & 136days, & Alpha & $8\times10^6$ \\
+  Pb-Bi & Po-210, Bi-210, Bi-212... & 136days, 5days & Alpha, $\beta^-$ & $6.07\times10^{10}$, $6.17\times10^{10}$  \\
+  \hline
+\end{tabular}
+\caption{Comparison of activation levels in metal coolants \cite{coolant_activation}. Pure sodium does not produce any long term waste. Bismuth generates a significant amount of Polonium. Alpha radiation is highly toxic, but not penetrating, so pipes will not need radiological shielding.}
+\end{table}
+ 
+\subsection{Secondary Working Fluid}
+The working fluid has some influence on the selection of the primary coolant and vice versa. As mentioned earlier, lead or LBE are far more compatible with air and water than sodium coolants.  
+Lead coolant will be able to eliminate the secondary loop required for sodium reactors. Sodium reactors may also be able to cut out that circuit if carbon dioxide was used as the working fluid.
 
 
 % \FloatBarrier %needs graphicx, I think
@@ -408,7 +440,11 @@ Actinide metals are not well-characterized, but they tend to have low thermal co
 There are two approaches for burning actinides. The first is to add minor actinides to a ``conventional'' fast reactor. The loading of MAs will be limited to a couple percent in order to limit the change in reactor behavior.
 The second approach is to load as many minor actinides into the core as possible (Actinide Burner Reactor, ABR).
 
-%One fuel cycle difficulty is the separation of Americium. When this element is lost with rare earth wastes that are partitioned, it will be a significant source of radiotoxicity. Highly effective separation techniques are key to reducing the burden on geological repositories.
+\subsubsection{Fuel Cycle Considerations}
+One fuel cycle difficulty is the separation of Americium. When this element is lost with rare earth wastes that are partitioned, it will be a significant source of radiotoxicity. Highly effective separation techniques are key to reducing the burden on geological repositories.
+
+A good fuel cycle combination was developed in the Integral Fast Reactor concept. Metal fuel is used in combination with electrorefining (pyroprocessing). After the fission products are left behind, the metal is simply cast into the desired fuel geometry. All of the actinides are recovered together so the proliferation risk is minimizes in that respect \cite{IAEA_MA}.
+
 
 
 
