@@ -40,7 +40,7 @@ Some decisions can be made immediately based on engineering knowledge and an und
 \begin{figure}[!hbp]
   \label{fig:life_cycle_cost}
   \centering
-  \includegraphics[width=0.80\textwidth]{graphics/life_cycle_cost_chart.png}
+  \includegraphics[width=0.70\textwidth]{graphics/life_cycle_cost_chart.png}
   \caption{Commitment, system-specific knowledge, and cost (source: B.S. Blanchard \& W.J. Fabrycky, Systems Engineering and Analysis, 3rd Ed., Prentice Hall, 1998, Figure 2.11).}
   %http://www.sole.or.kr/Download/SOLEtech/SOLEtech(Volume%204.12).htm
 \end{figure}
@@ -61,7 +61,7 @@ In any reactor that produces power, cooling is essential. When the goal is produ
 The first question is, Is this a thermal spectrum reactor? If the answer is no, many low-Z coolants are automatically eliminated from consideration.
 Next, the desired operating temperatures need to be assigned ballpark numbers. This is determined by estimating the capabilities of heat exchangers, turbo-machinery, and structural and piping materials. You can prescribe these limits later if necessary, remember design is an iterative process. 
 
-The following coolant properties are desirable for any reactor. \emph{High heat capacity}. This allows the coolant to absorb more energy per change in temperature. \emph{Non-corrosive}. Whatever the coolant contacts, or has the potential to contact, it should be compatible with. If the coolant corrodes the cladding, it will limit the fuel cycle length and sabotage the fuel utilization. \emph{Radiation stability} The coolant in the core will experience high radiation fields and radiolysis and neutron activation will occur. The coolant should be selected so that these phenomena are minimized. \emph{Low cross section} Neutrons absorbed in the coolant or coolant impurities will diminish the performance of the reactor.%\cite{Hausner}
+The following coolant properties are desirable for any reactor. \emph{High heat capacity}. This allows the coolant to absorb more energy per change in temperature. \emph{Non-corrosive}. Whatever the coolant contacts, or has the potential to contact, it should be compatible with. If the coolant corrodes the cladding, it will limit the fuel cycle length and sabotage the fuel utilization. \emph{Radiation stability} The coolant in the core will experience high radiation fields and radiolysis and neutron activation will occur. The coolant should be selected so that these phenomena are minimized. \emph{Low cross section} Neutrons absorbed in the coolant or coolant impurities will diminish the performance of the reactor \cite{Hausner}.
 
 %water
 % liquid metal
@@ -104,7 +104,7 @@ For thermal reactors, a low-Z element is needed to slow down the fission neutron
 % \subsection{Figures of Merit}
 
 \subsection{Fuel Selection}
-The requirements of nuclear fuel are very demanding due to the environment it must withstand. Hausner %\cite{Hausner}
+The requirements of nuclear fuel are very demanding due to the environment it must withstand. Hausner \cite{Hausner}
 lists the following requirements for nuclear fuel
 \begin{itemize}
 \item[1.] It must be able to tolerant radiation damage
@@ -142,10 +142,38 @@ Several advanced reactor concepts call for the use of the Brayton cycle with Hel
 % talk about why a Mercury Rankine cycle is not very good.
 
 \section{Geometric Specification}
-After these have been determined, the basic core geometry comes next. Fuel pins increase centerline temperatures, but minimize the amount of cladding required, thus the neutronics expert prefers this option. The heat transfer expert prefers a design that tends towards a plate with more surface area per volume. 
-%discuss other options: molten fuel, dispersions, particles
+After these have been determined, the basic core geometry comes next. 
 At this point an optimized design is unlikely and even unneeded. More likely each analysis will provide the limits of a feasible design space. 
 
+There are several options for fuel layout: pins, plates, fluid, and dispersion.
+For optimal neutronics performance, the percentage of cladding material must be reduced. Thus large fuel pins are favored.
+From the heat transfer perspective the surface area of the fuel per volume should be maximized. This pushes the design towards plate fuel.
+These competing requirements will lead to trade-offs and constraints.
+
+Dispersion fuels such as TRISO particles in a graphite matrix can combine favorable material properties. Fissile material with a low thermal conductivity (such as UO$_2$) can be embedded in a matrix with a high thermal conductivity. 
+This enables efficient heat transfer to the working fluid and avoids excessive temperatures in the fissile material.
+The primary drawback of composite fuels is that the fuel volume fraction in the reactor core is reduced. For graphite reactors this is not a problem because the moderator to fuel ratio is so large anyway.
+
+% Fuel pins increase centerline temperatures, but minimize the amount of cladding required, thus the neutronics expert prefers this option. The heat transfer expert prefers a design that tends towards a plate with more surface area per volume. 
+
+Fluid fuel has only been used in the Molten Salt Reactor Experiment. 
+Fluid fuels are not used primarily because of the high temperatures required (which is very taxing for materials) and the potential mobility of fuel.
+In an accident, the worst case is that the nuclear fuel and radioactive material can not be accounted for. Containing radioactivity is the primary safety mandate for nuclear reactors and fluid fuels make this more difficult.
+
+At this stage of the design, the unit cell is typically the geometry of interest. 
+The representative fuel pin with its surrounding coolant channel is taken to be part of an infinite lattice. This is modeled by using reflected boundary conditions.
+%Add notes about computational set up: MC vs Deterministic, multiphysics or separated, reduced order models.
+
+% How can we predict limitations from accidents at this point? We don't want to start with no margin.
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begingroup
+\let\cleardoublepage\clearpage
+
+\bibliographystyle{ieeetr}
+\bibliography{bib3}
+
+\endgroup
