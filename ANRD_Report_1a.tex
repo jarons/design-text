@@ -1,0 +1,457 @@
+\documentclass[]{report}
+\usepackage[english]{babel}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{multicol}
+\title{Advanced Nuclear Reactor Design Report}
+\author{Matthew Eklund, Christopher Morrison, Jaron Senecal}
+\date{Spring 2016}
+
+% Smaller margins, fix these later:
+\addtolength{\oddsidemargin}{-0.75in}
+\addtolength{\evensidemargin}{-1.25in}
+\addtolength{\textwidth}{1.75in}%
+%\addtolength{\topmargin}{-1in}
+\addtolength{\textheight}{1.5in}
+
+\begin{document}
+\maketitle
+
+\setcounter{chapter}{1}
+\section{Introduction}
+
+With the increasing need for reliable energy sources that contribute minimal quantities of greenhouse gases, nuclear power remains a valuable option as compared to traditional fossil fuel sources.  
+For geographical locations with high power requirements and excessive pollution, nuclear energy is a particularly attractive solution as it contributes nearly zero carbon emissions to the atmosphere.  
+Nuclear power does not depend on the weather or the amount of available sunlight, the fuel is relatively cheap, and the technologies have been employed for thousands of reactor-years %operating years (taking into account all the reactors throughout the world which have operated in over the past 50 years) 
+with only several major incidents on record.
+
+There are many nuclear reactor designs existent throughout the world in the year 2016.  
+Many designs have been successful in their deployment, others have had limited success, and others have not surpassed the research and design phase to the prototyping and development phases.  
+While many of the existent technologies are well understood for many years, some are still untested.  
+The information is provided in a wide range of resources from technical journals to textbooks, internal industrial and government documents, etc.  
+There is no lack in the amount of information available for students in Nuclear Engineering to aid in designing nuclear reactors.  
+However, the current academic environment in the US typically focuses on understanding the physical processes that occur within a nuclear reactor, the standard reactor types used today and in the past, and in understanding codes used for reactor analysis.  
+
+This report documents the goals of the work to be performed for this independent study throughout the semester including the planned research milestones and the end deliverables.
+
+\section{Motivation}
+
+Many reactor designs have been created and built in the last century and were conceptualized to satisfy certain requirements and the technology available at the time.
+The authors have found a lack of a centralized source of information for designing a nuclear reactor from the ground up using new techniques and improving technologies.
+With design requirements and technology capabilities and plant availability continuing to increase, there exists a need to define principles by which a nuclear engineer may take advantage of these advances to solve the energy needs of society.
+The motivation for this project is to document the methods and process by which a nuclear engineer may design a nuclear reactor to satisfy the given energy and construction requirements.  
+As a part of the work done toward designing a nuclear reactor optimized for a specific mission, additional documentation toward creating a textbook in Advanced Nuclear Reactor Design Principles will be written throughout the semester.
+
+\section{Mission}\label{sec:mission}
+
+Nuclear reactors are employed to fulfill several purposes.  The major geographical locations of their deployment along with their purposes and users/customers are detailed in the following table.
+
+\begin{center}
+\begin{tabular}[pos{c}]{| c | c | c |}
+\hline
+Geographical Location & Purpose & Customer/Application \\
+\hline
+Land & Electrical Power Production & Industry/Government \\
+\hline
+Land & Science and Medical Research & Industry/Government \\
+\hline
+Space & Energy and Propulsion & Industry/Government/Military \\
+\hline
+Sea & Energy and Propulsion & Government/Military \\
+\hline
+\end{tabular}
+\end{center}
+
+The authors determined to approach designing a land-based reactor which operates within a power production facility.
+The reason for designing a reactor for this deployment is that it is the most widely-used platform for building nuclear power throughout the world.
+As developing countries seek carbon-clean energy resources with a sufficient power density to provide electricity for their growing economies, nuclear energy is the affordable and dispatchable %remains a powerful and attractive 
+alternative to pollution-producing plants which burn traditional fossil fuels.
+
+With the function and geographical location for this reactor decided, the mission which drives the design of a particular type of reactor was explored.  Each nuclear reactor must take into account (to varying degrees) the contemporary atmosphere in which it will be built; this includes factors such as current and potential future technologies, the economic and political environment, economic feasibility, etc.
+In beginning this project, the authors brainstormed on important problems related to the world's energy crisis and nuclear power of today.  %The table below includes the major problems chosen by the team which should be addressed when designing a new power-generation facility.
+The major problems selected by the team to be addressed when designing a new power-generation facility are listed in order of priority
+\begin{itemize}
+  \item[1.] Buildup of nuclear waste (long-lived actinides and fission products)
+  \item[2.] Lack of passive safety systems in reactors
+  \item[3.] High cost of constructing and operating a reactor
+  \item[4.] Lengthy construction times for nuclear facilities, including lead time for research and development
+  \item[5.] Dwindling fissile material available
+  \item[6.] Proliferation concerns
+\end{itemize}
+Of course there are other non-negotiable priorities that will be considered as constraints, such as maintaining an acceptable level of safety.
+
+\iffalse
+\begin{center}
+\begin{tabular}[c]{| p{5cm} | c |}
+\hline
+Problem & Ranking of Importance \\
+\hline
+High cost of constructing and \mbox{operating} a reactor & \multirow{2}{*}{3} \\
+\hline
+Buildup of nuclear waste (long-lived actinides and fission products) & \multirow{3}{*}{1} \\
+\hline
+Dwindling fissile material \mbox{available} & \multirow{2}{*}{5} \\
+\hline
+Lack of passive safety systems in reactors & \multirow{2}{*}{2} \\
+\hline
+Lengthy construction times for nuclear facilities & \multirow{2}{*}{4} \\
+\hline
+Proliferation concerns & \multirow{1}{*}{6} \\
+\hline
+\end{tabular}
+\end{center}
+\fi
+
+The justification for choosing the ranking system is based on the current political and economical status of nuclear power in the world.  
+The costs of building and operating a reactor can only be reduced by a finite quantity as compared to the total cost.  
+As for the price and availability of fissile nuclear material, this is of little concern.
+At the moment, triuranium octoxide, or "yellow cake," costs only \$34.65 USD and is plentiful in supply.  
+
+Nuclear reactor facilities take anywhere from several years to over a decade to build and will always be a long-term investment for each plant.  
+The concern over proliferation (i.e. the use of nuclear material by malign/terrorist organizations to produce weapons) will always exist and can be prevented through increased plant defenses, security measures, emergency plans, etc.  
+The problem of increasing nuclear waste and increasing passive safety systems of this newly-designed nuclear reactor were deemed of highest importance.
+
+Following the brainstorming session and group discussions, the mission for the reactor was determined.
+The mission for the new reactor design is meant to provide an economic solution to the production of long-lived radioactive waste produced by standard light water reactors (LWRs).  The official mission of the project is thus:
+\begin{itemize} 
+  \item To design a nuclear power reactor which is optimized to economically burn long-lived actinides while implementing additional passive safety features over standard reactor designs.
+\end{itemize}
+
+The process by which this reactor is designed is documented in this report.
+
+\section{Design Attributes}
+With the mission for designing the new reactor having been decided, the more specific details of the desired reactor functions and attributes must be determined.
+For a reactor that is optimized for burning long-lived actinides, certain attributes are essential.
+The list of most important attributes for this reactor is as follows:
+
+\begin{itemize} 
+  \item The new reactor design must maintain and exceed the safety levels achieved by modern reactor designs.
+  \item The reactor must provide a means for burning long-lived actinides.  This will require higher-energy neutrons to increase fission rate of actinides.
+  \item The reactor design should take advantage of natural processes/phenomena to increase safety wherever possible.  Relying on natural processes will decrease the need for engineered systems for increased safety and reliability.  The simplified design may also reduce costs in construction and maintenance.
+  \item As far as possible, decisions should favor an economical design by reducing the cost in construction and operation.
+\end{itemize}
+
+Along with these primary and most essential attributes, there are several secondary attributes that are less crucial to achieve in the final design.  The list of secondary attributes is as follows:
+\begin{itemize}
+  \item The burner reactor design may be considered a "stepping stone" toward a breeder reactor design.  Modular or replaceable features which may facilitate a breeding environment within the core may be considered.
+  \item If possible, technologies for improving proliferation resistance in the reactor design should be incorporated.
+  \item If possible, the reactor should be designed using technologies which are available either currently or within a reasonable amount of time so as to reduce the time necessary for construction and implementation of the reactor (including research and development phases).
+\end{itemize}
+
+\section{Core Component Desirables and Potential Materials}
+
+At this point, no materials, geometries, etc. have been disqualified from potential burner reactor designs for this project;  the authors wish to keep an open-minded mentality to this design process.
+In order to determine which materials would be optimal for a burner reactor, a brainstorming session resulted in a list of common and potential materials for arguably the three most important components of a nuclear reactor core: the fuel, the fuel cladding, and the coolant (no moderator is required because this will be a fast reactor). 
+ The fuel is what contains the fissile or fissionable material to produce fission nuclear reactions to produce heat. It needs to withstand an extreme environment while conducting heat to the working fluid. %(which is the whole purpose of designing and building a nuclear reactor core).  
+ The cladding exists to contain the fuel and is the first line of defense for the release of fission products from the core.  Finally, the coolant is what extracts the heat from the fuel to eventually be used in a heat generation cycle (e.g., Rankine or Brayton) to produce electricity.
+Found below is a table of the desirable attributes for the fuel, cladding, and coolant specifically for a burner reactor as determined by the authors.  They are not listed in order of priority.
+
+
+
+\begin{center}
+\begin{tabular}[c]{| c | p{2cm} | p{2cm} | p{2.0cm} |}
+\hline
+\multicolumn{4}{|c|}{Desirable Component Attributes} \\
+\hline
+ & Fuel & Cladding & Coolant \\
+\hline
+\hline
+\multirow{2}{*}{Thermophysical} & High Density & &\\
+\cline{2-4}
+ & \multicolumn{3}{|c|}{High Thermal Conductivity} \\
+\cline{2-4}
+ & \multicolumn{2}{|c|}{High Melting Point} & Low Melting Point \\
+\cline{2-4}
+\multirow{2}{*}{Properties} & & & High Specific Heat \\
+\cline{2-4}
+ & & & High Boiling Point (if liquid) \\
+\hline
+\multirow{3}{*}{Neutronics/Reactivity} & \multicolumn{3}{|c|}{Low Neutron Capture Cross Section} \\
+\cline{2-4}
+ & \multicolumn{3}{|c|}{Low Neutron Moderation} \\
+\cline{2-4}
+ & High Reactivity & & \\
+\hline
+\multirow{3}{*}{Mechanical/} & \multicolumn{3}{|c|}{Chemical Compatibility}  \\ % at Interfaces
+\cline{2-4}
+ & \multicolumn{3}{|c|}{Manufacturable and Low Cost} \\
+\cline{2-4}
+\multirow{2}{*}{Chemical Properties} & \multicolumn{2}{|c|}{Ductile} & Optical Transparency \\ %Brittle/
+\cline{2-4}
+ & Low Swelling / Growth & High Strength & Easy Pumping \\
+\cline{2-4}
+ &  & Retains Fission Products &  \\
+\hline
+\end{tabular}
+\end{center}
+
+For these three major components, the list of desirable attributes can be used to determine a set of compatible materials.  After a brainstorming session, the table below includes the major choices of materials that would be suitable for each component.
+
+\begin{center}
+\begin{tabular}[c]{| p{2.0cm} | p{2.5cm} | p{2.5cm} |}
+\hline
+\multicolumn{3}{|c|}{Potential Component Materials} \\
+\hline
+Fuel & Cladding & Coolant \\
+\hline
+Uranium dioxide (UO$_2$) & Zirconium alloys & Sodium (Na) \\
+\hline
+Uranium carbide (UC) & Steels & Sodium potassium (NaK) \\
+\hline
+Uranium nitride (UN) & Iron-chromium-aluminum (FeCrAl) alloy & Lead (Pb) \\
+\hline
+Uranium-zirconium (UZr) alloys & Nickel (Ni) alloys & Lead-Bismuth Eutectic\\
+\hline
+Uranium silicide (U$_3$Si$_2$)  & Chromium (Cr) alloys & Nitrogen (N$_2$)\\ %Particle fluid
+\hline
+Plutonium-Uranium compounds  & Silicon carbide (SiC) & Fluoride Salts \\
+\hline
+Salt Fuels & Ceramic Composites & Chloride Salts \\
+\hline
+Liquid Fuels & Hastelloys & Noble Gases (e.g., Argon, Helium) \\
+\hline
+ & & Mercury (Hg)  \\
+\hline
+\end{tabular}
+\end{center}
+% I'm taking out MOX and mixed nitrides, trying to make it more generic
+
+All of these and more materials could potentially serve as fuel, cladding, coolant, and other components (structural, piping, etc.) for the reactor core.  However, the goal is to achieve an optimal design to take advantage of all available materials for accomplishing the mission of the reactor's construction.  With seemingly endless options, a method for narrowing down the list of potential materials is needed. For each of the reactor core components materials with less desirable properties must be eliminated.  
+
+One possible method of narrowing material selection choices is to create a grading matrix.  Criteria which are crucial for particular reactor component functions will have a rating given to each material; a "1" indicates the material is nearly perfectly suitable for such a function, and "5" indicates the material will not function well for this purpose.
+
+A notable limitation of this grading rubric is that certain material properties may be perfectly suitable for a reactor component function, and increasing this value in the material will produce no further advantage.  This must be taken into account when creating the rubric; for example, the melting point for a coolant typically is recommended to be at room temperature or below, but having a melting temperature at temperatures incredibly lower than this may not be useful.
+
+The grading matrix is broken into three parts for the fuel, cladding, and coolant separately.  The authors brainstormed and included a grading based on technical data which is included (where available) and otherwise determined through recommendations of previous reactor designers and analysts, operating reactor experience, etc.
+
+\subsection{Fuel Material}
+
+% We need to add the columns: Ductility R\&D needs, (max burn up)
+% We ought to do the transpose of this table...
+\begin{center}
+\hspace*{-2cm} %this is tacky and dangerous
+\begin{tabular}[c]{| p{1.6cm} | p{1.2cm} | p{1.9cm} | p{2.05cm} | p{1.5cm} | p{2.0cm} | p{1.5cm} | p{1.5cm} | p{2cm} |}
+\hline
+\multicolumn{9}{|c|}{Potential Fuel Materials Grading Matrix} \\
+\hline
+ & Physical Density \{g/cm$^3$\} & Fissile Material Density \{g/cm$^3$\} & Thermal Conductivity  \{W/(m-K)\} & Melting Point \{K\} & Reactivity at.\%inert$\times \sigma_{\gamma}$ \{barn\} & Chemical Compatibility & Swelling & Linear Expansion Coefficient \{10$^6$(1/K)\} \\
+\hline
+Uranium dioxide (UO$_2$) & \{10.963\} & 3 \{9.664\} & 5 \{2.6\} (1523 K, theor. density) & 1 \{3120\} & 2 \{2.48E-3\} & not sodium & 2 & 2 \{9.8\} (300 K)  \\
+\hline
+Uranium carbide (UC) & \{13.630\} & 2 \{12.970\} & 1 \{23.0\} (700 K) & 2 \{2793\} & 1 \{1.09E-3\} & carburizes cladding & 2 & 2 \{10.5\} (300 K)\\
+\hline
+Uranium nitride (UN) & \{14.420\} & 2 \{13.619\} & 1 \{20.9\} (1000 K) & 1 \{3123\} & 2 \{1.90E-3\} & needs nitrogen environment & 1 & 3 \{7.5\} (300 K) \\
+\hline
+%Uranium zirconium (UZr) alloys & \\
+U-20\%Pu-10\%Zr & & 2 \{14.1\} & 2 \{16\} & 4 \{1400\} & 4 \{3.12E-1\} &  & 5 Really bad, 33\% & 1 \{17\}\\
+%http://www.sciencedirect.com/science/article/pii/S1738573315000753
+\hline
+Uranium silicide (U$_3$Si$_2$)  & \{12.2\} & 3 \{11.3\} & 1 \{22\} (1000 K) & 3 \{1938\} & 2 \{8.24E-3\} & & 2? & 1 \{16.1\}\\
+\hline
+%Plutonium (Pu)  & \{19.840\} & \{19.840\} & \{6.5\} (508 K) & \{913\} & & & & \{33.9\} (400-470 K) \\
+% We really shouldn't use Pu, 
+%\hline
+%Mixed Nitrides  &  \\
+%\hline
+%Salt Fuels &  \\
+%\hline
+%Liquid Fuels &  \\
+%\hline
+% Mixed Oxides (MOX)
+
+\end{tabular}
+\end{center}
+% Maybe we should have a table for things with numbers and a second table for numbers and qualities that are harder to determine. If they aren't good in the first table, they aren't worth exploring in the second.
+
+We assumed thermal expansion was a good feature because of the feedback effects. A higher melting point is good, but the important metric is the margin between operating temperature and failure temperature. The operating temperature is determined by the thermal conductivity, but can be overriden by the fuel geometry. 
+
+The candidate fuels can be compared by their total scores. Lower scores are better so we have: 10 for UC and UN, 12 for U$_3$Si$_2$, 15 for UO$_2$, and 18 for U-Zr alloy. UC and UN are very similar and they will both be considered as the primary choice of fuel material. 
+
+It is widely known that uranium dioxide is terrible because of its thermal conductivity. The high centerline temperature causes many problems: corrosion, cracking, mass relocation, etc. 
+However, the chemical stability, high melting point, and substantial industry familiarity of UO$_2$ make it eligible for further consideration for dispersion in some kind of matrix.
+
+Contrary to our results, the U-Zr metal fuel has been deployed quite successfully, despite swelling up to 33\%. The low melting point of metal fuel mandates a thermal (sodium) bond between the pellet and cladding. 
+With this arrangement and a large gap to accommodate swelling, reliable and inherently safe fuel has been designed and deployed at EBR-II.
+Thus, U-Zr will be considered as the backup fuel material if UN or UC do not perform well enough in future analyses.
+
+From this comparison we see that Uranium Nitride and the Uranium metal alloy are likely to be quite favorable. The uranium metal alloy has been proven in EBR-II. Note that these results are not final, later in the design process we may change our priorities and select a different material for investigation.
+
+\subsection{Coolant Selection}
+Next we examine several potential coolants. Several properties and figures of merit are listed in Table~\ref{tab:coolant_properties}. For the figures of merit, lower numbers are better. The turbulent, forced convection figure of merit is calculated from the thermo-physical properties as 
+\begin{equation}
+FOM=\left(\frac{\mu^2}{\beta\rho^2c_p^{1.8} } \right)^{0.36}\,.
+\end{equation}
+The Natural Circulation figure of merit is
+\begin{equation}
+FOM= \left( \frac{\mu^2}{\beta\rho^2c_p^{1.8}}  \right)^{0.36} \,.
+\end{equation}
+ The heat exchanger figure of merit is given by 
+\begin{equation}
+FOM= \frac{\mu^{0.2}}{\rho^{0.3}c_p^{0.6}k^{0.6}}
+\end{equation} 
+ 
+
+\begin{table} \label{tab:coolant_properties}
+\hspace*{-2cm} %this is tacky and dangerous
+\begin{tabular}{|p{2.8cm}|c|c|p{2.5cm}|c|c|c|}
+%
+% We need to include: activation (problems for maintenance); chemical stability (needs cover gas?);
+%
+%\centering
+\hline
+Coolant & Melting Temp, $^{\circ}$C & Boiling Temp, $^{\circ}$C & $\sigma_\gamma $ at 0.1 MeV, $10^{-5}$ b & Pump FOM & Nat Circ FOM & HX FOM \\
+\hline
+Sodium & 97.8 & 882.8 & 1.32 & 0.137 & 9.93 & 0.0135 \\
+\hline
+NaK (23\%-77\%) & -12.6 & 784 & 152 & 0.456 & 12.9 & 0.0299\\
+\hline
+Lead & 327.4 & 1745 & 256.2 & 0.560 & 11.4 & 0.0821\\
+\hline
+Pb-Bi (44.5\%-55.5\%) & 125 & 1638 & 450.1 & 0.573 & 9.80 & 0.0870\\
+\hline
+FLiNaK & 454 & 1570 & 2.541 & 0.013 & 4.57 & 0.182\\
+\hline
+NaCl-KCl-MgCl$_2$ (30\%-20\%-50\%) & 396 & 2500 &  &  &  & \\
+\hline
+\end{tabular}
+\caption{Material property comparison for potential liquid coolants.\cite{IAEA_1}}
+\end{table}
+
+Next we'll consider gaseous coolants. Gas coolants have poorer heat transfer properties, but they are easier to connect to power conversion systems. Gases naturally tolerate higher temperatures, which facilitates higher thermal efficiencies. However, that efficiency is diminished by additional pumping power requirements.
+For gases like Helium, leakage can be a significant concern. 
+
+\begin{table} \label{tab:gases}
+\hspace*{-2cm} %this is tacky and dangerous
+\begin{tabular}{|l|c|c|c|c|p{2.75cm}|c|}
+%
+% We need to include: leakage issues; chemical stability; HX FOM, absorption 
+%
+%\centering
+\hline
+%Coolant &  $\sigma_a$ at 0.1MeV,  & Pump FOM & Nat Circ FOM & HX FOM & Corrosion Issues & Leakage\\
+% & $10^-5$ b & & & & &\\
+Coolant &  Cp & Density, g/cm$^3$  & Pump FOM & Nat Circ FOM & Corrosion Issues & Cost\\
+\hline
+Helium & \textbf{5.18} & 0.00966 & 14.5 & 56.9 & Diffusion into clad/structures? Diffusion bonding & highest \& most leakage\\
+\hline
+CO$_2$ & 1.27 & \textbf{0.104} & \textbf{6.31} & \textbf{25.1} & Dissociation+ Carburization &  low\\
+\hline
+Air & & & & & Oxidization & lowest\\
+\hline
+N$_2$ & 1.18 & 0.0646 & 20.1 & 37.9 & Dissociation+? & low \\
+\hline
+Argon & 0.552 & 0.146 & 33.5 & 29.8 & Diffusion bonding & moderate\\
+\hline
+\end{tabular}
+\caption{Material property comparison for potential gas coolants. Properties listed at 20MPa and 700$^\circ$C except for Argon which is at 400 degrees.} %cite NIST
+\end{table}
+
+\begin{table}[ht]
+% Problem:!!! some properties are FLiNaK some are chlorides!!!
+\begin{tabular}{l|l|l|l|l}
+          & Sodium & Lead & CO$_2$ & Salt\\
+  \hline
+  Freezing & 2. 97.8C & 3. 327C & 1. Gas & 4. 396C\\ 
+  Boiling & 4. 883C & 2. 1745C & 1. Gas & 3. 2500C\\ 
+  Corrosion & 1. & 2. & 2. & 3.? \\
+  Absorption & 2. & 3. & 1. & 4. \\
+  Coolant Temp Coeff & 3. & 2. & 1. & 4.\\
+  Moderating Power & 4. 0.0078 & 1. 0.0024 & 2. 0.0025 & 3. 0.0073\\
+  Radioactivity & 3. Na-24 & 2. Po-210 & 1. O-17 & 4. Na-24, K, Cl \\
+  Radiolysis & 1. N/A & 1. N/A & 2. & 4. \\
+  Stability & 4. Pyrophoric & 1. & 1. & 1. \\
+  Toxicity & 4. & 3. & 1. & 1. \\
+  Pressurization & 1. Low & 1. Low & 4. High & 1. Low \\
+  Kinematic Viscosity, m$^2$/s & 2. 3.02E-7 & 1. 1.92E-7 & 3. 4.00E-7 & 4. 1.49E-3 \\ 
+  %Dynamic Viscosity, Pa-s & 2. 2.55E-4 & 3. 2.02E-3 & 1. 4.17E-5 & 4. 3E-3 \\
+  Pumping Power, MW \cite{coolant_comparison} & 2. 3.82 & 3. 7.41 & 4. 34.3 & 1. 3.45 \\
+  Natural Circulation \cite{coolant_comparison} & 1. 40.4 & 2. 43.6 & 3. 70.1 & 4. 98.3 \\
+  Power Density(kW/L) & 1. 290 & 3. 112  & 4. 85.4 & 2. 130 \\
+  Power Conversion & 4. Intermediate loop & 2. & 1. Direct Cycle & 2. \\
+  Transparent & 4. No & 4. No & 1. Yes & 1. Yes\\
+  % Heat transfer coefficient: heat exchanger
+  $\rho c_p$ & 3. 1.07 & 2. 1.55 & 4. 0.18 & 1. 1.92\\   % (rho)Cp: absorbs decay heat
+  \hline
+\end{tabular}
+\caption{Exhaustive comparison of reactor coolants.\cite{coolant_comparison}}
+\end{table}
+
+Although gas coolants perform quite well in many respects, they require high pressure for effective heat transfer. This means LOCA is the main accident scenario of concern. To achieve the goal of passive safety a second pressure boundary would be required. 
+This is likely not the most economical approach, so the design is back to the same point as an LWR. Also the poor cooling ability of gaseous coolants requires a lower core power density.
+Furthermore, the efficiency of a direct cycle is more or less negated by the high pumping power requirement.
+
+The low operating pressures of liquid coolants provide the additional benefit of precluding control rod ejection accidents (but not accidental withdrawal). 
+
+Next, Salt (NaCl-KCl-MgCl$_2$) was discarded because of its high melting point, relatively lacking R\&D, and for neutronic reasons---softer spectrum, higher absorption, and highly positive coolant temperature coefficient.
+
+Sodium is preferred over NaK because it absorbs fewer neutrons. Lead is preferred over lead-bismuth for the same reason. Also it has less corrosion, generates much less Po-210, and it costs less. 
+However, if a high melting point is later deemed to be too large of a problem, these eutectics will be revisited.
+
+Comparing sodium and lead, there are good reasons to use each. Sodium has been a traditionally popular choice because of its heat transfer capabilities. We selected lead coolant which trades some of these properties for a different set of benefits. 
+The first desire that lead satisfies is that it eliminates the violent reaction with water that haunts sodium and NaK systems. This will allow the lead coolant to eliminate the intermediate cooling loop that sodium systems require.
+The main price we have to pay is a higher melting point which will require engineering solutions for startup, shutdown, and refueling. On the other hand, lead has a much higher melting point that relieves the fear of boiling in the core.
+Lead also moderates and absorbs neutrons less. In general we are aiming for the hardest neutron spectrum possible, thus lead is preferable. Less absorption also lowers the slightly positive coolant temperature coefficient, which is good news for safety concerns.
+
+Lead coolant is erosive at higher flow rates $\approx$3 m/s, so a larger pitch will be required. That should be manageable. Lead is chemically toxic, which will affect the plant design, but should not be any more burdensome than a pyrophoric coolant. If sodium comes into contact with ambient air it will produce NaH and Na$_2$O which are irritants. In comparison, lead is actually more benign, but significant ingestion is still not acceptable.
+For our purposes we deem the downsides of lead to be worth the benefits it provides.
+
+As the analysis progresses, sodium and Pb-Bi will be compared alongside lead. The secondary options are likely to be primary options in different scenarios where qualities are prioritized differently.
+For example, materials research may effectively solve the problem of Pb-Bi corrosion, making that coolant much more attractive.
+ 
+\begin{table}[ht]
+%You should do multiple rows: one for each isotope
+\begin{tabular}{|l|l|l|l|l|}
+  \hline
+          & Activation Products & Half-Life & Type & Concentration, Bq/kg\\
+  \hline
+  Sodium & Na-24, Na-22 & 15h, 2.6yr & Gamma & $9.82\times 10^{11}$, $1.45\times 10^7$\\ 
+  NaK & Na-24, Na-22, K-40 & 15h, 2.6yr, $1.25\times10^9$yr & Gamma  &\\  %1.46MeV
+  Lead & Po-210, Bi-208, Pb-205... & 136days, & Alpha & $8\times10^6$ \\
+  Pb-Bi & Po-210, Bi-210, Bi-212... & 136days, 5days & Alpha, $\beta^-$ & $6.07\times10^{10}$, $6.17\times10^{10}$  \\
+  \hline
+\end{tabular}
+\caption{Comparison of activation levels in metal coolants \cite{coolant_activation}. Pure sodium does not produce any long term waste. Bismuth generates a significant amount of Polonium. Alpha radiation is highly toxic, but not penetrating, so pipes will not need radiological shielding.}
+\end{table}
+ 
+\subsection{Secondary Working Fluid}
+The working fluid has some influence on the selection of the primary coolant and vice versa. As mentioned earlier, lead or LBE are far more compatible with air and water than sodium coolants.  
+Lead coolant will be able to eliminate the secondary loop required for sodium reactors. 
+Sodium reactors may also be able to cut out that circuit if carbon dioxide is used as the working fluid.
+
+
+% \FloatBarrier %needs graphicx, I think
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Burning Minor Actinides}
+One of the most appealing promises of fast reactor technology is the ability to dispose of long-lived waste while at the same time producing useful energy.
+The mission statement of this project, given in Section~\ref{sec:mission}, lists the destruction (fission) of minor actinides (MAs) as a primary objective.
+The feasibility of accomplishing effective destruction of the minor actinides is clearly demonstrated by a large number of publications on this topic. However, the optimal method of doing so is not clear, especially since different scenarios and different priorities will heavily influence the optimal design.
+In this section we discuss some of the challenges and special considerations involved with MA disposition.
+
+The most obvious requirement for efficiently burning minor actinides is a fast neutron spectrum. Theoretically MAs could be destroyed in thermal spectrum reactors, but in such a setting the MAs are a burden to the neutron economy (several absorptions may be necessary before fission is feasible). 
+In a fast reactor, a large portion of the population of neutrons has energy above the fission threshold of the MAs.
+
+The threshold nature of minor actinide fission is the cause of some problems. Since many delayed neutrons are emitted with energies less than fission neutrons have, their effective worth $\beta_{eff}$ is diminished. Smaller $\beta_{eff}$ means there is a smaller margin between steady state and prompt criticality.
+Fission thresholds also cause problems with void reactivity. The presence of coolant softens the neutron energy spectrum in the reactor core. When the coolant is voided, or expands due to heating, the energy spectrum hardens, which means a larger portion of the neutrons are capable of causing fission. Thus MAs make the coolant density coefficient of reactivity more positive.
+%also makes Doppler coefficient more positive?
+
+The addition of minor actinides to a fast reactor core reduces the change in reactivity from depletion. This is because many of the minor actinides are fertile and after absorbing neutrons become much more likely to fission.
+
+Actinide metals are not well-characterized, but they tend to have low thermal conductivities and melting points. Oxide or Nitride forms may be better suited to containing the minor actinides.
+
+
+There are two approaches for burning actinides. The first is to add minor actinides to a ``conventional'' fast reactor. The loading of MAs will be limited to a couple percent in order to limit the change in reactor behavior.
+The second approach is to load as many minor actinides into the core as possible (Actinide Burner Reactor, ABR).
+
+\subsubsection{Fuel Cycle Considerations}
+One fuel cycle difficulty is the separation of Americium. When this element is lost with rare earth wastes that are partitioned, it will be a significant source of radiotoxicity. Highly effective separation techniques are key to reducing the burden on geological repositories.
+
+A good fuel cycle combination was developed in the Integral Fast Reactor concept. Metal fuel is used in combination with electrorefining (pyroprocessing). After the fission products are left behind, the metal is simply cast into the desired fuel geometry. All of the actinides are recovered together so the proliferation risk is minimizes in that respect \cite{IAEA_MA}.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliographystyle{ieeetr}
+\bibliography{report_bib}
+\end{document}

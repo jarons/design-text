@@ -1,0 +1,50 @@
+\documentclass[]{book}
+%\usepackage{standalone} %you could combine documents this way 
+\usepackage{booktabs} % tables
+\usepackage{graphicx} %allows .png\ and .pdf
+%\usepackage{natbib} % I don't think we need this, just chapterbib
+\usepackage{chapterbib}
+\usepackage{wrapfig} %allows you to wrap text around a figure
+
+  % Smaller margins, fix these later:
+\addtolength{\oddsidemargin}{-0.75in}
+\addtolength{\evensidemargin}{-1.25in}
+\addtolength{\textwidth}{1.75in}%
+\addtolength{\topmargin}{-0.5in}
+\addtolength{\textheight}{1.25in}
+
+\begin{document}
+%\section*{Cover page}
+\noindent Authors: Matthew Eklund, Christopher Morrison, and Jaron Senecal\\
+Affiliation: Rensselaer Polytechnic Institute \\
+Last updated: \today
+
+
+\section*{Disclaimer}
+This document is for informative and educational purposes only and is incomplete.  
+The views and opinions expressed in this book do not necessarily represent those of Rensselaer Polytechnic Institute. 
+Additional information will be added throughout the year. Don't sue us, please.
+
+
+\section*{Preface}
+%Well, it's simple...
+Teaching college students how to solve equations is easy to do. But teaching students how to design systems is more complex, mostly because it is less regimented. From our experience as graduate students in nuclear engineering we feel that the process of designing reactors has not been adequately covered by the existing curriculum. Perhaps this is due to the fact that reactor designs seem limited to PWRs and new construction is quite rare. Our hope is that this book will help prepare young engineers to design the reactors of tomorrow. (Our hope is that we are among those engineers). Furthermore, all existing nuclear reactors were designed about fifty years ago, so our goal is to learn from those who were there when it happened. Perhaps this book can be used as the basis for a course in reactor design.
+
+\begingroup
+\let\cleardoublepage\clearpage
+\tableofcontents
+\endgroup
+
+\include{content1}
+
+\include{content2}
+
+\include{content3}
+
+\include{content4}
+
+\include{content5}
+
+\include{Materials}
+
+\end{document}

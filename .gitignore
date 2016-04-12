@@ -1,0 +1,8 @@
+#ignore these types of files so that you don't see them in git status
+#  * is a wildcard
+*.log
+*.aux
+*~
+*.gz
+*.bbl
+*.blg
