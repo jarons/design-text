@@ -141,15 +141,29 @@ Several advanced reactor concepts call for the use of the Brayton cycle with Hel
 
 % talk about why a Mercury Rankine cycle is not very good.
 
-\section{Geometric Specification}
+\section{Fuel Geometric Specification}
 After these have been determined, the basic core geometry comes next. 
 At this point an optimized design is unlikely and even unneeded. More likely each analysis will provide the limits of a feasible design space. 
 
-There are several options for fuel layout: pins, plates, fluid, and dispersion.
+\begin{figure}[!hbt]
+  \label{fig:fuel_geom}
+  \centering
+  \includegraphics[width=0.70\textwidth]{graphics/SAperVOL.pdf}
+  \caption{Surface area per volume is a function of fuel layout.}
+\end{figure}
+
+There are several options for fuel layout: blocks, pins, plates, pebbles, and fluid.
+Blocks have the smallest surface area for heat transfer, whereas plates and small pebbles/particles have more surface area per volume, see Figure~\ref{fig:fuel_geom}. 
+%
+%Figure about dispersion vs solid fuel meat
+%
 For optimal neutronics performance, the percentage of cladding material must be reduced. Thus large fuel pins are favored.
 From the heat transfer perspective the surface area of the fuel per volume should be maximized. This pushes the design towards plate fuel.
+In the extreme case, the fuel is the working fluid and the reactor core does not need a heat transfer surface.
 These competing requirements will lead to trade-offs and constraints.
 
+Within these fuel types, the fuel meat can be composed of either uniform fuel (e.g. a pellet of UN) or some type of composite (e.g. TRISO fuel in a graphite matrix).
+Solid fuels allow for smaller reactors cores or lower enrichment.
 Dispersion fuels such as TRISO particles in a graphite matrix can combine favorable material properties. Fissile material with a low thermal conductivity (such as UO$_2$) can be embedded in a matrix with a high thermal conductivity. 
 This enables efficient heat transfer to the working fluid and avoids excessive temperatures in the fissile material.
 The primary drawback of composite fuels is that the fuel volume fraction in the reactor core is reduced. For graphite reactors this is not a problem because the moderator to fuel ratio is so large anyway.
@@ -166,6 +180,48 @@ The representative fuel pin with its surrounding coolant channel is taken to be 
 
 % How can we predict limitations from accidents at this point? We don't want to start with no margin.
 
+\section{Assembly Design}
+Where does this section go?
+
+Fuel pins are arranged into assemblies in order to resist buckling and simplify fuel handling.
+To be compatible with existing reactors, the size of the assembly must be constant.
+So an 11-pin-by-11-pin assembly can replace a 10x10 assembly if it has the same size.
+
+\section{Core Geometry}
+Neutron leakage from the reactor core can have a significant reactivity effect.
+This penalty is minimized by making the core as large as possible---this is one economy of scale. For a fixed power rating, creating a reactor core in the shape of a sphere is optimal for reducing neutron leakage.
+Such a geometry is often impractical because it precludes (or greatly complicates) fuel shuffling. It is also difficult to construct.
+For this reason, reactor cores are generally assembled in the shape of cylinder.
+
+\begin{table}
+\centering
+\large
+\caption{Geometric Buckling Factors. $\nu_0=2.405$. Tildes denote extrapolated lengths. Geometric buckling is additive whereas the peaking factors and flux profiles are multiplicative. (Adapted from Duderstadt.)}
+\setstretch{2.0}
+\begin{tabular}{lccc}
+\hline
+Geometry & Geometric Buckling $B_g^2$ & Flux Profile & Peak/Average \\
+\hline
+Slab & $\left( \frac{\pi}{\tilde{a}} \right)^2$ & $\cos \frac{\pi x}{\tilde{a}}$ & 1.571\\
+Infinite Cylinder & $\left( \frac{\nu _0}{\tilde{R}} \right)^2$ & $J_0 \frac{\nu_0 r}{\tilde{R}}$ & 2.316\\
+Sphere & $\left( \frac{\pi}{\tilde{R}} \right)^2$ & $r^{-1}\sin \frac{\pi r}{\tilde{R}}$ & \\
+Finite Cylinder & $\left( \frac{\pi}{\tilde{H}} \right)^2 + \left( \frac{\nu _0}{\tilde{R}}
+     \right)^2$    & $J_0 \frac{\nu_0 r}{\tilde{R}} \cos \frac{\pi z}{\tilde{H}}$ & 3.638\\
+\hline
+
+\end{tabular}
+\end{table}
+% make the rows taller
+
+Sodium cooled reactors rely on increased leakage to mitigate the positive sodium void coefficient of reactivity that comes from reduced absorptions in the coolant.
+This is accomplished with a ``pancake core'' design with a radius larger than the height.
+
+%We need some figures in this section...
+
+Annular cores can be used to mitigate power peaking...
+
+The height of the core is usually limited by thermal hydraulic considerations. 
+In order to limit the pressure drop and temperature change across the core the height should not be too large.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
