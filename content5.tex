@@ -28,14 +28,35 @@ Removable absorbers (e.g. WABA) can be varied from batch to batch.
 Analytical calculations of control rod worth simplify the control rods into one central element. This may be a useful method for making estimates, but it is certainly not the appropriate way to design the control rods.
 Ever since the SL-1 accident, it has been accepted that no single control rod/device should have enough reactivity to bring the reactor critical. Thus if one rod fails, the others can still shut down the reactor.
 
+% Control-rod shadowing (self-shielding)
 
 % \section{Control Rod Programs}
 
 \section{Safety Analysis}
+%Check PRA notes to get the safety analysis progression correct
+
+Safety analysis for nuclear reactors is a strange combination of quantitative logic and whimsical imagination.
+On one hand systems and components are designed (and thoroughly tested in zealous quality assurance programs) to perform as intended over a wide range of conditions.
+On the other hand, accidents are postulated and analyzed where those systems fail. 
+In the nuclear industry it is not satisfactory to design a reactor that will never melt down;
+designers must also show that if it did, the danger to the environment is minimal.
+
+At first blush this seems absurd because it flies in the face of physics. 
+But it is actually an effective approach for obtaining high levels of safety.
+There is no way to foresee every possible initiating event or mode of failure, so simply assuming a component failure helps mitigate the unforeseeable. 
+For example, the failure of a Reactor Pressure Vessel is thought of as extremely unlikely due to the sound engineering principles codified in the ASME Boiler and Pressure Vessel Code.
+However, at the Davis-Besse plant in 2002 severe corrosion of the vessel head was discovered.
+If it had not been noticed, there could have been a severe loss of coolant accident.
+Incidents like this show how certain postulated accidents can be more likely than expected and they do in fact merit analysis.
+
+Distrust of individual systems and components leads to redundancy referred to as Defense in Depth. DID provides multiple layers of protection to maintain safety even when one layer (or several) fail. Redundant safety measures are complimented by diverse systems. 
+Diversity allows the intended function to be fulfilled in all cases because no initiating event disables all of the safety systems.
+Defense in Depth typically proceeds along these lines: fission products are contained in the fuel pellet, the fuel pellet is encased in cladding, the fuel assemblies are enclosed in the RPV, the RPV is inside a containment building, and if all of these rupture there is a large distance between the reactor and any populated area.
+
 A nuclear reactor operating at steady state is very safe. Failures due to creep and corrosion are easy to design for.
 The situations that really tax the nuclear reactor are when it deviates from steady state.
 Initially, the idea behind nuclear reactor safety was to survive the maximum credible accident.
-Since then, probabilistic risk analysis has turned attention to dealing with the most likely accident. 
+Since then, probabilistic risk analysis has expanded the view of safety to include smaller events that are more likely to occur. %turned attention to dealing with the most likely accident. 
 
 The standard accident scenarios include: loss of coolant accidents (large break or small break), reactivity insertion accidents (control rod ejection, boron dilution accident, moderator overcooling, etc.), loss of heat exchanger, station blackout, loss of flow accident (blockages, pump failures).
 
@@ -48,10 +69,20 @@ The earlier a path to failure is identified, the easier it will be to deal with.
 Good designs are simple and inherently avoid as many mechanisms for failures/accidents as possible.
 
 \subsection{Loss of Coolant Accident}
+This severe accident looks different in different reactor types. For a Light Water Reactor, a sudden loss in pressure may uncover the core when the water flashes to steam.
+For a gas cooled reactor, the heat transfer is much less effective with a loss of pressure.
+For a liquid metal cooled reactor, the coolant is not pressurized so it will not boil vaporize like water. But voiding in the core can be a positive reactivity, which merits investigation.
 
 \subsection{Reactivity Insertion Accident}
+Usually the hypothetical scenario for an RIA is a Rod Ejection Accident. Hypothetically, the high pressure inside a reactor vessel could eject a control rod if there was a seal breach.
+This clearly makes no sense in the case of a low pressure metal or salt cooled reactor, but it is good to know how a reactor responds to a step insertion of reactivity.
+There are other causes of reactivity insertions (e.g. excess heat removal from the coolant) so this is a class of accident that cannot be neglected.
 
 \subsection{Loss of Flow Accident}
 The nuclear reactor continues to generate power after a pump stops working. Even if a scram is initiated immediately, the decay heat is unavoidable.
 To ameliorate this problem, flywheels or other arrangements let the coolant wind down over a longer period of time in order to maintain cooling.
 
+\section{Homework Problems}
+\begin{itemize}
+  \item[1.] Give an example of a) redundant and b) diverse safety systems.
+\end{itemize}
