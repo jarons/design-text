@@ -94,12 +94,67 @@ If gaseous coolant is chosen, the chemically inert noble gases become attractive
 %\subsubsection{Comparison of Molten Salts and Liquid Metals}
 %\subsubsection{Comparison of Moderating Coolants}
 % or:
-%\subsubsection{Comparison of Liquid Coolants}
+\subsubsection{Comparison of Liquid Coolants}
+Water is the first liquid coolant that comes to mind because of its vast experience.
+Water is an effective moderator, and it can be used directly in a steam turbine.
+But aqueous systems can be very corrosive, and the low boiling point mandates high system pressure.
+Heavy water is similar to light water except it is much more expensive and absorbs many fewer neutrons.
 
+Other coolants of interest boil at higher temperatures and therefore do not require high pressure containment. Thus in a loss of coolant accident, there is no dryout of the core. 
+
+Molten salts have good heat transfer properties (high heat capacity, large thermal expansion for natural circulation), but have very little operating experience. 
+Usually they will have light atoms which will moderate neutrons too much for fast reactors, but not enough for thermal reactors.
+Elements like Lithium and Potassium will also absorb significantly, which can lead to a positive void coefficient of reactivity.
+Molten salts can be transparent (good for fuel handling) and they are not toxic.
+However they melt at high temperatures which introduces complex freezing problems.
+ 
+Liquid metals are suitable for fast reactors because they have low moderating powers.
+They allow high temperature and low pressure operation. They also allow for power densities greater than for water and gas reactors.
+Disadvantages include high melting points and neutron activation.
+Elements of interest are Sodium, Potassium, Lithium, Lead, Bismuth, and Mercury. 
+Second tier metals include Tin, Gallium, Rubidium, and Phosphorus. A helpful summary of their properties (which may be out of date) is given in Table~4.1 of \cite{Graham}.
+
+Sodium has attained much experience, and it is generally viewed as the best choice for fast reactors. But other metals have some definite advantages.
+Sodium burns in water and air and it produces gamma rays when it is activated. 
+On the other hand, it is a very good coolant that allows for high power density and tight fuel lattices.
 
 \subsection{Moderator Selection}
 For thermal reactors, a low-Z element is needed to slow down the fission neutrons to low energy levels where fission is more likely to occur. It must also do this without absorbing too many neutrons. Hydrogen is an obvious choice because of its ability to stop a neutron completely with only one scattering interaction and its low mean free path. Deuterium comes to mind next because it absorbs neutrons 1000 times less. Graphite is a desirable moderator because it can withstand extremely high temperatures.
 %reproduce Duderstadt discussion and table
+
+Recall from Duderstadt and Hamilton\cite{Duderstadt} that discussing moderators is easier to do in terms of lethargy $u \equiv \ln \frac{E_0}{E}$. 
+The average lethargy gain is 
+\begin{equation}
+\xi \equiv 1+ \frac{\alpha}{1-\alpha} = 
+     1- \frac{(A-1)^2}{2A} \ln \left( \frac{A+1}{A-1} \right)\,.
+\end{equation}
+The average number of collisions required to slow down from 2MeV to 1eV is given by
+\begin{equation}
+  <\#>=\frac{\ln \frac{2\times10^6}{1.0}}{\xi}=\frac{14.5}{\xi}
+\end{equation}
+
+The \textit{moderating power}, $\xi \Sigma_s$, is a figure of merit that takes into account the probability that a scattering interaction will occur. $\Sigma_s$ is much lower for graphite than it is for water and thus more of the moderator material is needed.
+
+But a high moderating power is not useful if most of the neutrons are absorbed in the moderator. The \textit{moderating ratio} takes into account the absorptions in the moderator.
+\begin{equation}
+  Moderating ratio \equiv \frac{\xi \Sigma_s}{\Sigma_a}
+\end{equation}
+
+Common moderators are listed in Table~\ref{tab:moderators}, which was reproduced in part from Duderstadt and Hamilton\cite{Duderstadt}.
+
+\begin{table} \label{tab:moderators}
+\begin{tabular}{crrrrcr}
+\hline
+Moderator & $A$ & $\alpha$ & $\xi$ & $<\#>$ &$\xi \Sigma_s$ cm$^{-1}$ &$\xi \Sigma_s/\Sigma_a$\\
+\hline
+H & 1 & 0 & 1 & 14 \\
+H$_2$0 & - & - & 0.920 & 16 & 1.35 & 71 \\
+D$_2$0 & - & - & 0.509 & 29 & 0.176 & 5670 \\
+Be & 9 & 0.640 & 0.209 & 69 & 0.158 & 143 \\
+C & 12 & 0.716 & 0.158 & 91 & 0.060 & 192 \\
+\hline
+\end{tabular}
+\end{table}
 
 % \subsection{Figures of Merit}
 
@@ -108,7 +163,7 @@ The requirements of nuclear fuel are very demanding due to the environment it mu
 lists the following requirements for nuclear fuel
 \begin{itemize}
 \item[1.] It must be able to tolerant radiation damage
-\item[2.] It must not corrode upon contact with the cladding or coolant.
+\item[2.] It must not corrode upon contact with the cladding or coolant
 \item[3.] It or its impurities must not absorb too many neutrons
 \item[4a.] It must be able to withstand the temperature gradient caused by the heat it generates
 \item[4b.] It should have high thermal conductivity (or appropriate dimensions) in order to transmit its heat to the coolant
@@ -119,6 +174,27 @@ lists the following requirements for nuclear fuel
 \end{itemize} 
 
 Also it is generally preferable to have a high density in order to ease requirements for enrichment.
+
+Uranium dioxide is always the first fuel material to be considered. 
+It is chemically stable in air and water, it can tolerate extreme temperatures, and most of all it is widely used and studied. 
+UO$_2$ essentially has an extreme R\&D inertia behind it, that makes the use of other fuel compositions an uphill task.
+The primary reasons to move away from UO$_2$ are its wretched thermal conductivity and its incompatibility with fast reactor coolants.
+%reference/give a figure or a number for UO2 thermal-k
+
+Uranium metal was originally used in the Hanford B reactor because it was easy to extract Plutonium from. The high density of metal makes it attractive, especially for fast reactors.
+Uranium metal is made much more usable by alloying it with Molybdenum or Zirconium, which increase the melting temperature and avoid phase/density changes.
+Metal fuels were used to achieve and demonstrate passive safety in EBR-II. They have also successfully reached very high burnups.
+Metal fuel has a relatively low melting point and suffers from swelling issues.
+
+Uranium Carbide and Uranium Nitride are quite similar. Both have melting points similar to the ceramic UO$_2$, but thermal conductivities similar to metal fuel. 
+Their density is larger than UO$_2$ and they are compatible with sodium as a coolant.
+They are both harder to work with because they will oxidize in air. 
+When UN is irradiated it creates C-14, so it may be necessary to enrich the nitrogen in N-15.
+\textit{Say something about Uranium Silicide...}
+
+Fluid fuels can be gases (UF$_6$), molten salts (UF$_4$), or molten metals (e.g. Bismuth with dissolved Uranium). Fluid fuels have several benefits\cite{handbook}: continuous removal of fission products, simplified core layout, no radiation damage to the fuel, and simplified heat transfer.
+However, fluid fuels also have disadvantages: delayed neutrons leave the core, corrosion issues, and difficulty accounting for the exact location of fissile materials.
+
 
 \subsection{Cladding Selection}
 Material selection for cladding is important because it is the first line of defense for retaining radioactive material.
@@ -204,7 +280,7 @@ Geometry & Geometric Buckling $B_g^2$ & Flux Profile & Peak/Average \\
 \hline
 Slab & $\left( \frac{\pi}{\tilde{a}} \right)^2$ & $\cos \frac{\pi x}{\tilde{a}}$ & 1.571\\
 Infinite Cylinder & $\left( \frac{\nu _0}{\tilde{R}} \right)^2$ & $J_0 \frac{\nu_0 r}{\tilde{R}}$ & 2.316\\
-Sphere & $\left( \frac{\pi}{\tilde{R}} \right)^2$ & $r^{-1}\sin \frac{\pi r}{\tilde{R}}$ & \\
+Sphere & $\left( \frac{\pi}{\tilde{R}} \right)^2$ & $r^{-1}\sin \frac{\pi r}{\tilde{R}}$ & 3.2899\\ 
 Finite Cylinder & $\left( \frac{\pi}{\tilde{H}} \right)^2 + \left( \frac{\nu _0}{\tilde{R}}
      \right)^2$    & $J_0 \frac{\nu_0 r}{\tilde{R}} \cos \frac{\pi z}{\tilde{H}}$ & 3.638\\
 \hline
