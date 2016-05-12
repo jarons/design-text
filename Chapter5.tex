@@ -1,6 +1,8 @@
 \documentclass[]{book}
 \usepackage{graphicx}
 %\usepackage{wrapfig}
+\usepackage{etoolbox}
+\patchcmd{\thebibliography}{\chapter*}{\section*}{}{}
 \begin{document}
 \include{content5}
 % bibliography

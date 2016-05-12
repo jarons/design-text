@@ -1,6 +1,9 @@
 \documentclass[]{book}
 \usepackage{booktabs}
 \usepackage{graphicx} %allows .png
+
+\usepackage{etoolbox}
+\patchcmd{\thebibliography}{\chapter*}{\section*}{}{}
 \begin{document}
 \include{Materials}
 \end{document}

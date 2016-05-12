@@ -1,4 +1,6 @@
 \documentclass[]{book}
+\usepackage{etoolbox}
+\patchcmd{\thebibliography}{\chapter*}{\section*}{}{}
 \begin{document}
 \include{content2}
 \end{document}

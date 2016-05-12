@@ -2,6 +2,9 @@
 \usepackage{graphicx}
 \usepackage{wrapfig}
 \usepackage{setspace}
+
+\usepackage{etoolbox}
+\patchcmd{\thebibliography}{\chapter*}{\section*}{}{}
 \begin{document}
 \include{content3}
 % bibliography
